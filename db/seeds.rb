@@ -1,6 +1,7 @@
 require('pry')
 require_relative('../models/animal_type.rb')
 require_relative('../models/adoption_status.rb')
+require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
 require_relative('sql_runner.rb')
 
@@ -43,6 +44,36 @@ ron_weasley_the_cat = Animal.new ({
   })
 
 ron_weasley_the_cat.save
+
+mr_flopsy = Animal.new({
+  'name' => "Mr Flopsy",
+  'admission_date' => "2016/11/01",
+  'type_id' => rabbit_type.id,
+  'breed' => "Lop Eared",
+  'adoption_status_id' => ready_status.id,
+  'photo_file_path' => "http://imgc.allpostersimages.com/images/P-473-488-90/21/2144/XPBCD00Z/posters/petra-wegner-lop-eared-dwarf-rabbit.jpg"
+  })
+
+mr_flopsy.save
+
+
+owner1 = Owner.new({
+  'first_name' => "Keith",
+  'last_name' => "Douglas",
+  'address' => "CodeClan, Castle Terrace, Edinburgh",
+  'phone_number' => '07900123456'
+  })
+
+owner1.save
+
+owner2 = Owner.new({
+  'first_name' => "Craig",
+  'last_name' => "Morton",
+  'address' => "CodeClan, Castle Terrace, Edinburgh",
+  'phone_number' => '01313476521'
+  })
+
+owner2.save
 
 
 binding.pry

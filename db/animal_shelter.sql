@@ -1,8 +1,10 @@
+DROP TABLE adoptions;
+DROP TABLE owners;
+DROP TABLE animals; 
 DROP TABLE animal_types;
 DROP TABLE adoption_statuses;
-DROP TABLE owners;
-DROP TABLE animals;
-DROP TABLE adoptions;
+
+
 
 CREATE TABLE animal_types(
   id SERIAL4 PRIMARY KEY,
@@ -19,7 +21,7 @@ CREATE TABLE owners(
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   address VARCHAR(255),
-  phone_number INT4
+  phone_number VARCHAR(255)
 );
 
 CREATE TABLE animals(
