@@ -16,4 +16,9 @@ class Adoption
 
   end
 
+  def self.delete_all
+    sql = "DELETE FROM adoptions;"
+    SqlRunner.run(sql)
+  end
+
 end

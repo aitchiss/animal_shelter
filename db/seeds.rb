@@ -6,6 +6,7 @@ require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
 require_relative('sql_runner.rb')
 
+Adoption.delete_all
 Owner.delete_all
 Animal.delete_all
 AnimalType.delete_all
