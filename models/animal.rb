@@ -24,4 +24,9 @@ class Animal
     @id = animal_hash['id'].to_i
   end
 
+  def self.delete_all
+    sql = "DELETE FROM animals;"
+    SqlRunner.run(sql)
+  end
+
 end
