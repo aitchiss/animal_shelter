@@ -3,6 +3,9 @@ require_relative('../models/animal_type.rb')
 require_relative('../models/adoption_status.rb')
 require_relative('sql_runner.rb')
 
+AnimalType.delete_all
+AdoptionStatus.delete_all
+
 cat_type = AnimalType.new( { 'type' => 'cat' } )
 dog_type = AnimalType.new( { 'type' => 'dog' } )
 rabbit_type = AnimalType.new( 'type' => 'rabbit' )
