@@ -16,5 +16,10 @@ class Owner
     @id = owner_hash['id'].to_i
   end
 
+  def self.delete_all
+    sql = "DELETE FROM owners;"
+    SqlRunner.run(sql)
+  end
+
 
 end
