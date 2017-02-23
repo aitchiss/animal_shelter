@@ -1,6 +1,7 @@
 require('pry')
 require_relative('../models/animal_type.rb')
 require_relative('../models/adoption_status.rb')
+require_relative('../models/adoption.rb')
 require_relative('../models/owner.rb')
 require_relative('../models/animal.rb')
 require_relative('sql_runner.rb')
@@ -20,7 +21,9 @@ rabbit_type.save
 
 ready_status = AdoptionStatus.new( { 'status' => 'Ready for adoption' } )
 not_ready_status = AdoptionStatus.new( { 'status' => 'Not ready for adoption' } )
+adopted_status = AdoptionStatus.new( { 'status' => 'Adopted' } )
 
+adopted_status.save
 ready_status.save
 not_ready_status.save
 
@@ -51,7 +54,7 @@ mr_flopsy = Animal.new({
   'admission_date' => "2016/11/01",
   'type_id' => rabbit_type.id,
   'breed' => "Lop Eared",
-  'adoption_status_id' => ready_status.id,
+  'adoption_status_id' => adopted_status.id,
   'photo_file_path' => "http://imgc.allpostersimages.com/images/P-473-488-90/21/2144/XPBCD00Z/posters/petra-wegner-lop-eared-dwarf-rabbit.jpg"
   })
 
@@ -76,6 +79,13 @@ owner2 = Owner.new({
 
 owner2.save
 
+adoption_flopsy_keith = Adoption.new({
+  'owner_id' => owner1.id,
+  'animal_id' => mr_flopsy.id,
+  'date' => "2017/01/05"
+  })
+
+adoption_flopsy_keith.save
 
 binding.pry
 nil
