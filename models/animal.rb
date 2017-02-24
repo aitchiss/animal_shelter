@@ -101,6 +101,13 @@ class Animal
     return animals
   end
 
+  def self.get_all_adoptable
+    animals = Animal.all
+    adoptable_animals = []
+    animals.each {|animal| adoptable_animals << animal if animal.get_adoption_status == "Ready for adoption"}
+    return adoptable_animals
+  end
+
 
 
 end
