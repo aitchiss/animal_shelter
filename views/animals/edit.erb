@@ -5,7 +5,7 @@
 <form method="POST" action="/animals/<%= @animal.id %>">  
 
 <label for "name">Name: </label>
-<input type="text" value = "<%= @animal.name %>" name="name" id='name' readonly>
+<input type="text" value = "<%= @animal.name %>" name="name" id='name'>
 
 <label for "admission_date">Admission date: </label>
 <input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
@@ -19,7 +19,7 @@
 </select>
 
 <label for "breed">Breed: </label>
-<input type="text" value="<%=@animal.breed%>" name="breed" id="breed" readonly>
+<input type="text" value="<%=@animal.breed%>" name="breed" id="breed" >
 
 <label for "adoption_status">Adoption status: </label>
 <select id="adoption_status" name="adoption_status_id">

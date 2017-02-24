@@ -33,6 +33,8 @@ post '/animals/:id' do
   animal = Animal.find(params['id'].to_i)
   adoption_status_id = params['adoption_status_id'].to_i
   animal.change_adoption_status(adoption_status_id)
+  animal.name = params['name']
+  animal.breed = params['breed']
   animal.update
   redirect to('/animals')
 

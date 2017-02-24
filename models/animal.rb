@@ -1,6 +1,8 @@
 class Animal
 
-  attr_reader :id, :adoption_status_id, :photo_file_path, :breed, :type_id, :admission_date, :name
+  attr_reader :id, :adoption_status_id,  :type_id, :admission_date
+
+  attr_accessor :photo_file_path, :breed, :name
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
