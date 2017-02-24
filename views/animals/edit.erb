@@ -2,7 +2,7 @@
 
 <!-- add photo of animal here! -->
 
-<form>  
+<form method="POST" action="/animals">  
 
 <label for "name">Name: </label>
 <input type="text" value = "<%= @animal.name %>" name="name" id='name' readonly>
@@ -29,8 +29,9 @@
 
 <%end%>
 
-
 </select>
+
+<input type="submit" value="Update" />
 
 
 
