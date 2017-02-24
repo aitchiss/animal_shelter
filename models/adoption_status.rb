@@ -18,4 +18,11 @@ class AdoptionStatus
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM adoption_statuses;"
+    status_hashes = SqlRunner.run(sql)
+    status_objects = status_hashes.map {|status| AdoptionStatus.new(status)}
+    return status_objects
+  end
+
 end

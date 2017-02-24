@@ -1,0 +1,24 @@
+<h1>Update details</h1>
+<form>  
+
+<label for "name">Name: </label>
+<input type="text" value = "<%= @animal.name %>" name="name" id='name' readonly>
+
+<label for "admission_date">Admission date: </label>
+<input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
+
+<label for "adoption_status">Adoption status: </label>
+<select id="adoption_status" name="adoption_status_id">
+
+<% @adoption_statuses.each do |status|%>
+<option value="<%= status.id %>"><%= status.status %></option>
+
+<%end%>
+
+
+</select>
+
+
+<input type="text" value="<%= @animal.get_adoption_status %>" name="adoption_status" id="adoption_status">
+
+</form>
