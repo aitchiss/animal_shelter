@@ -1,5 +1,8 @@
-<h1>All animals</h1>
+<p>Select view: <a href="/animals">All Animals</a> <a href="/animals/adoptable">All Adoptable Animals</a></p>
+<h1><%=@header%></h1>
+
 <p><a href="/animals/new">Admit new animal</a></p>
+
 <% @animals.each do |animal| %>
   <p>Name: <%= animal.name %></p>
   <p>Admission Date: <%= animal.admission_date_formatted %></p>

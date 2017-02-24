@@ -8,8 +8,16 @@ require_relative ('../db/sql_runner.rb')
 
 get '/animals' do
   @animals = Animal.all
+  @header = "Current view: All Animals"
   erb( :"animals/index" )
 end
+
+get '/animals/adoptable' do
+  @animals = Animal.get_all_adoptable
+  @header = "Current View: Adoptable Animals"
+  erb(:'animals/index')
+end
+
 
 get '/animals/new' do
   @adoption_statuses = AdoptionStatus.all
@@ -53,3 +61,8 @@ post '/animals/:id/delete' do
   animal.delete
   redirect to('/animals')
 end
+
+# get '/animals/type/:id' do
+#   # get all animals of type :id
+# end
+
