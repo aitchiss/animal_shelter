@@ -24,6 +24,22 @@ class Animal
     @id = animal_hash['id'].to_i
   end
 
+  def admission_date_formatted()
+    date_components = @admission_date.split('/')
+    date_components.reverse!
+    date = date_components.join('/')
+    return date
+  end
+
+  def update()
+    sql = "UPDATE animals SET (name, admission_date, type_id, breed, adoption_status_id, photo_file_path) = ('#{@name}', '#{@admission_date}', #{@type_id}, '#{@breed}', #{@adoption_status_id}, '#{@photo_file_path}') WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
+  def change_adoption_status(status_id)
+    @adoption_status_id = status_id
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals;"
     SqlRunner.run(sql)
