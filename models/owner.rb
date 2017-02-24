@@ -1,6 +1,8 @@
 class Owner
 
-  attr_reader :id, :first_name, :last_name, :address, :phone_number
+  attr_reader :id
+
+  attr_accessor :first_name, :last_name, :address, :phone_number
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -22,6 +24,11 @@ class Owner
             WHERE ad.owner_id = #{@id};"
     animals = Animal.get_many(sql)
     return animals
+  end
+
+  def update()
+    sql = "UPDATE owners SET (first_name, last_name, address, phone_number) = ('#{@first_name}', '#{@last_name}', '#{@address}', '#{@phone_number}') WHERE id = #{@id} "
+    SqlRunner.run(sql)
   end
 
 

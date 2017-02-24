@@ -1,6 +1,6 @@
 <h1>Update owner details</h1>
 
-<form>
+<form method="POST" action="/owners/<%= @owner.id%>">
 
 <label for "first_name">First Name: </label>
 <input type="text" value="<%= @owner.first_name%>" name="first_name" id="first_name">
