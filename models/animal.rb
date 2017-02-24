@@ -74,6 +74,11 @@ class Animal
     @adoption_status_id = status_id
   end
 
+  def delete()
+    sql = "DELETE FROM animals WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals;"
     SqlRunner.run(sql)

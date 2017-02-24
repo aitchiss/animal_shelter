@@ -7,3 +7,7 @@
 <p>Adoption status: <%= @animal.get_adoption_status%></p>
 
 <a href="/animals/<%= @animal.id%>/edit">Update details</a>
+
+<form method="POST" action="/animals/<%=@animal.id%>/delete">
+<input type="submit" value="Delete Record">
+</form>
