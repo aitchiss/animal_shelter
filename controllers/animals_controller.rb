@@ -11,6 +11,12 @@ get '/animals' do
   erb( :"animals/index" )
 end
 
+get '/animals/new' do
+  @adoption_statuses = AdoptionStatus.all
+  @animal_types = AnimalType.all
+  erb(:"animals/new")
+end
+
 get '/animals/:id' do
   @animal = Animal.find(params['id'].to_i)
   erb( :"animals/show" )
@@ -23,11 +29,7 @@ get '/animals/:id/edit' do
   erb( :"animals/edit" )
 end
 
-get '/animals/new' do
-  @adoption_statuses = AdoptionStatus.all
-  @animal_types = AnimalType.all
-  erb(:"animals/new")
-end
+
 
 post '/animals' do
   animal = Animal.new(params)

@@ -8,6 +8,10 @@ get '/owners' do
   erb(:"owners/index")
 end
 
+get '/owners/new' do
+  erb(:"/owners/new")
+end
+
 get '/owners/:id' do
   @owner = Owner.find(params['id'].to_i)
   erb(:"owners/show")
@@ -18,9 +22,7 @@ get '/owners/:id/edit' do
   erb(:"owners/edit")
 end
 
-get '/owners/new' do
-  erb(:"/owners/new")
-end
+
 
 post '/owners' do
   owner = Owner.new(params)
