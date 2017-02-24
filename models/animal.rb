@@ -74,6 +74,12 @@ class Animal
     @adoption_status_id = status_id
   end
 
+  def process_adoption()
+    adoption_status = AdoptionStatus.find_by_status('Adopted')
+    @adoption_status_id = adoption_status.id
+    self.update
+  end
+
   def delete()
     sql = "DELETE FROM animals WHERE id = #{@id};"
     SqlRunner.run(sql)

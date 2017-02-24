@@ -13,6 +13,14 @@ class AdoptionStatus
     @id = status_hash['id'].to_i
   end
 
+  def self.find_by_status(status_desc)
+    sql = "SELECT * FROM adoption_statuses WHERE status = '#{status_desc}';"
+    status_hash = SqlRunner.run(sql).first
+    status = AdoptionStatus.new(status_hash)
+    return status
+  end
+
+
   def self.delete_all()
     sql = "DELETE FROM adoption_statuses;"
     SqlRunner.run(sql)
