@@ -16,3 +16,12 @@ get '/animals/:id/edit' do
   @animal_types = AnimalType.all
   erb( :"animals/edit" )
 end
+
+post '/animals/:id' do
+  animal = Animal.find(params['id'].to_i)
+  adoption_status_id = params['adoption_status_id'].to_i
+  animal.change_adoption_status(adoption_status_id)
+  animal.update
+  redirect to('/animals')
+
+end
