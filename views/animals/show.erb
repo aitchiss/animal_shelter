@@ -1,7 +1,9 @@
-<h1>Profile: <%= @animal.name%></h1>
+<h1>Profile: <%= @animal.name%> the <%= @animal.breed%></h1>
 
 <img src="<%= @animal.photo_file_path%>" />
 <p>Admission date: <%= @animal.admission_date_formatted%></p>
-<p>Type: <%= @animal.get_type%></p>
+<!-- <p>Type: <%= @animal.get_type%></p> not sure this is really needed!-->
 <p>Breed: <%= @animal.breed%></p>
 <p>Adoption status: <%= @animal.get_adoption_status%></p>
+
+<a href="/animals/<%= @animal.id%>/edit">Update details</a>

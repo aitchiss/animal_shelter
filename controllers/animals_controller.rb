@@ -2,6 +2,7 @@ require ('sinatra')
 require ('sinatra/contrib/all')
 require_relative ('../models/animal.rb')
 require_relative ('../models/adoption_status.rb')
+require_relative ('../models/adoption.rb')
 require_relative ('../models/animal_type.rb')
 require_relative ('../db/sql_runner.rb')
 

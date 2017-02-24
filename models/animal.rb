@@ -27,10 +27,21 @@ class Animal
   end
 
   def admission_date_formatted()
-    date_components = @admission_date.split('/')
-    date_components.reverse!
-    date = date_components.join('/')
-    return date
+    return pretty_date(@admission_date)
+  end
+
+  def pretty_date(date)
+    if date.include?('-')
+      date_components = date.split('-')
+      date_components.reverse!
+      date = date_components.join('/')
+      return date
+    else
+      date_components = date.split('/')
+      date_components.reverse!
+      date = date_components.join('/')
+      return date
+    end
   end
 
   def update()
@@ -43,6 +54,13 @@ class Animal
     statuses_hash = SqlRunner.run(sql).first
     status_object = AdoptionStatus.new(statuses_hash)
     return status_object.status
+  end
+
+  def get_adoption_date
+    sql = "SELECT * FROM adoptions WHERE animal_id = #{@id};"
+    adoption_hash = SqlRunner.run(sql).first
+    adoption = Adoption.new(adoption_hash)
+    return pretty_date(adoption.date)
   end
 
   def get_type

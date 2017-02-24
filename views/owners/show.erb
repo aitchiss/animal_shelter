@@ -1,0 +1,12 @@
+<h1>Owner Profile</h1>
+
+<p>Name: <%= @owner.first_name%> <%= @owner.last_name%></p>
+<p>Address: <%= @owner.address%></p>
+<p>Contact number: 0<%= @owner.phone_number%></p>
+<p>Pets adopted:</p>
+<% @owner.animals.each do |animal| %>
+<p>Animal name: <%= animal.name%></p>
+<p>Breed/type: <%= animal.breed%> <%= animal.get_type%></p>
+<p>Adopted on: <%= animal.get_adoption_date%></p>
+
+<%end%>
