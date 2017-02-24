@@ -37,5 +37,12 @@ class Owner
     return owners
   end
 
+  def self.find(id)
+    sql="SELECT * FROM owners WHERE id=#{id};"
+    owner_hash = SqlRunner.run(sql).first
+    owner = Owner.new(owner_hash)
+    return owner
+  end
+
 
 end
