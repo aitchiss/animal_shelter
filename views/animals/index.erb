@@ -1,5 +1,15 @@
-<p>Select view: <a href="/animals">All Animals</a> <a href="/animals/adoptable">All Adoptable Animals</a></p>
+<p>Select view: 
+  <ul>
+    <li><a href="/animals">All Animals</a></li>
+    <li><a href="/animals/adoptable">Adoptable Animals</a></li>
+      <%@types.each do |type|%>
+      <li><a href='/animals/types/<%=type.id%>'>All <%=type.type.capitalize%>s</a>   </li>
+      <%end%>
+  </ul>
+</p>
 <h1><%=@header%></h1>
+
+
 
 <p><a href="/animals/new">Admit new animal</a></p>
 

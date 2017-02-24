@@ -102,11 +102,19 @@ class Animal
   end
 
   def self.get_all_adoptable
-    animals = Animal.all
-    adoptable_animals = []
-    animals.each {|animal| adoptable_animals << animal if animal.get_adoption_status == "Ready for adoption"}
-    return adoptable_animals
+    sql = "SELECT animals.* FROM animals INNER JOIN adoption_statuses ON adoption_statuses.id = animals.adoption_status_id WHERE adoption_statuses.status = 'Ready for adoption' "
+    animals = Animal.get_many(sql)
+    return animals
+
   end
+
+  def self.get_by_type(id)
+    sql = "SELECT * FROM animals WHERE type_id = #{id};"
+    animals = Animal.get_many(sql)
+    return animals
+  end
+
+
 
 
 
