@@ -1,0 +1,7 @@
+<h1>Profile: <%= @animal.name%></h1>
+
+<img src="<%= @animal.photo_file_path%>" />
+<p>Admission date: <%= @animal.admission_date_formatted%></p>
+<p>Type: <%= @animal.get_type%></p>
+<p>Breed: <%= @animal.breed%></p>
+<p>Adoption status: <%= @animal.get_adoption_status%></p>

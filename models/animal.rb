@@ -45,6 +45,13 @@ class Animal
     return status_object.status
   end
 
+  def get_type
+    sql= "SELECT * FROM animal_types WHERE id = #{@type_id};"
+    type_hash = SqlRunner.run(sql).first
+    animal_type = AnimalType.new(type_hash)
+    return animal_type.type
+  end
+
   def change_adoption_status(status_id)
     @adoption_status_id = status_id
   end
