@@ -24,6 +24,7 @@ class Owner
     return animals
   end
 
+
   def self.delete_all()
     sql = "DELETE FROM owners;"
     SqlRunner.run(sql)

@@ -1,0 +1,10 @@
+<h1>Registered Owners</h1>
+
+<% @owners.each do |owner| %>
+  <p>First Name: <%= owner.first_name%></p>
+  <p>Last Name: <%= owner.last_name%></p>
+  <p>Address: <%= owner.address%></p>
+  <p>Contact phone number: 0<%= owner.phone_number%></p>
+  <p>Animals adopted: <%= owner.animals.count%></p>
+
+<%end%>
