@@ -16,9 +16,24 @@ class Owner
     @id = owner_hash['id'].to_i
   end
 
-  def self.delete_all
+  def animals()
+    sql = "SELECT a.* FROM animals a INNER JOIN
+            adoptions ad ON ad.animal_id = a.id
+            WHERE ad.owner_id = #{@id};"
+    animals = Animal.get_many(sql)
+    return animals
+  end
+
+  def self.delete_all()
     sql = "DELETE FROM owners;"
     SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM owners;"
+    owners_hashes = SqlRunner.run(sql)
+    owners = owners_hashes.map {|owner| Owner.new(owner)}
+    return owners
   end
 
 
