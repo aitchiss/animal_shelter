@@ -1,0 +1,37 @@
+<h1>Admit new animal</h1>
+
+<form method="POST" action="/animals">
+
+<label for "name">Name: </label>
+<input type="text" name="name" id='name'>
+
+<label for "admission_date">Admission date: </label>
+<input type="text" name="admission_date" id="admission_date">
+
+<label for "animal_type">Type: </label>
+<select id="animal_type" name="type_id">
+<% @animal_types.each do |type| %>
+<option value="<%=type.id%>"> <%= type.type %></option>
+<%end%>
+
+</select>
+
+<label for "breed">Breed: </label>
+<input type="text" name="breed" id="breed" >
+
+<label for "adoption_status">Adoption status: </label>
+<select id="adoption_status" name="adoption_status_id">
+
+<% @adoption_statuses.each do |status|%>
+<option value="<%= status.id %>" ><%= status.status%></option>
+
+<%end%>
+
+</select>
+
+<label for "photo_file_path">Photo location: </label>
+<input type="text" name="photo_file_path" id="photo_file_path">
+
+<input type="submit" value="Admit animal" />
+
+</form>

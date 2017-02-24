@@ -17,6 +17,18 @@ get '/animals/:id/edit' do
   erb( :"animals/edit" )
 end
 
+get '/animals/new' do
+  @adoption_statuses = AdoptionStatus.all
+  @animal_types = AnimalType.all
+  erb(:"animals/new")
+end
+
+post '/animals' do
+  animal = Animal.new(params)
+  animal.save
+  erb(:'animals/create')
+end
+
 post '/animals/:id' do
   animal = Animal.find(params['id'].to_i)
   adoption_status_id = params['adoption_status_id'].to_i
