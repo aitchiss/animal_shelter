@@ -12,3 +12,6 @@
 <%end%>
 
 <p><a href="/owners/<%= @owner.id%>/edit">Update details</a></p>
+<form method="POST" action="/owners/<%= @owner.id%>/delete">
+  <input type="submit" value="Delete Record" />
+</form>

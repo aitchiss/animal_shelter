@@ -39,3 +39,9 @@ post '/owners/:id' do
   @owner.update
   redirect to('/owners')
 end
+
+post '/owners/:id/delete' do
+  owner = Owner.find(params['id'].to_i)
+  owner.delete
+  redirect to('/owners')
+end
