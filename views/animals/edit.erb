@@ -1,4 +1,7 @@
 <h1>Update details</h1>
+
+<!-- add photo of animal here! -->
+
 <form>  
 
 <label for "name">Name: </label>
@@ -6,6 +9,14 @@
 
 <label for "admission_date">Admission date: </label>
 <input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
+
+<label for "animal_type">Type: </label>
+<select id="animal_type" name="type_id">
+<% @animal_types.each do |type| %>
+<option value="<%=type.id%>" <%="selected" if @animal.type_id == type.id%> > <%= type.type %></option>
+<%end%>
+
+</select>
 
 <label for "adoption_status">Adoption status: </label>
 <select id="adoption_status" name="adoption_status_id">

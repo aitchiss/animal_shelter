@@ -19,4 +19,11 @@ class AnimalType
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM animal_types;"
+    animal_type_hashes = SqlRunner.run(sql)
+    animal_types = animal_type_hashes.map {|type| AnimalType.new(type)}
+    return animal_types
+  end
+
 end
