@@ -50,6 +50,12 @@ class Animal
     Animal.get_many(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE id = #{id};"
+    animal_hash = SqlRunner.run(sql).first
+    return Animal.new(animal_hash)
+  end
+
   def self.get_many(sql)
     animals_info = SqlRunner.run(sql)
     animals = animals_info.map {|animal| Animal.new(animal)}
