@@ -62,6 +62,41 @@ mr_flopsy = Animal.new({
 mr_flopsy.save
 
 
+galactus = Animal.new({
+  'name' => "Galactus",
+  'admission_date' => "2017/02/01",
+  'type_id' => dog_type.id,
+  'breed' => "Staffordshire Bull Terrier",
+  'adoption_status_id' => ready_status.id,
+  'photo_file_path' => "http://i48.tinypic.com/280mej9.jpg"
+  })
+
+galactus.save
+
+mabel = Animal.new({
+  'name' => "Mabel",
+  'admission_date' => "2016/12/26",
+  'type_id' => cat_type.id,
+  'breed' => "Tabby",
+  'adoption_status_id' => not_ready_status.id,
+  'photo_file_path' => "https://s-media-cache-ak0.pinimg.com/564x/e5/1f/25/e51f2549f5e539c6cfd8e325a83651b5.jpg"
+  })
+
+mabel.save
+
+hulk_the_cat = Animal.new({
+  'name' => "Hulk Hogan",
+  'admission_date' => "2016/12/01",
+  'type_id' => cat_type.id,
+  'breed' => "Persian",
+  'adoption_status_id' => ready_status.id,
+  'photo_file_path' => "http://elelur.com/data_images/cat-breeds/persian-cat/persian-cat-04.jpg"
+  })
+
+hulk_the_cat.save
+
+
+
 owner1 = Owner.new({
   'first_name' => "Keith",
   'last_name' => "Douglas",

@@ -25,4 +25,5 @@ post '/adoptions' do
   adoption.save
   animal = Animal.find(animal_id)
   animal.process_adoption
+  redirect to('/owners')
 end
