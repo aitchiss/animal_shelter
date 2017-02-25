@@ -27,9 +27,7 @@
       <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
       <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
     </div>
-    <div class="actions">
-      <p><a class="view-btn" href="/animals/<%= animal.id %>">view</a></p>
-    </div>
+      <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
   </div>
 
 <% end %>

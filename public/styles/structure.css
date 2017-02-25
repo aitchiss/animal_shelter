@@ -52,8 +52,9 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 50%;
+  width: 60%;
   margin-left: 10px;
+  font-size: 1.15rem;
 }
 
 .filter .col{
@@ -70,12 +71,12 @@ body{
   display: flex;
   flex-direction: row;
   background-color: #F5F5F5;
-  width: 50%;
+  width: 60%;
   margin: 10px;
 }
 
 .info-container{
-  width: 350px;
+  width: 500px;
 }
 
 .img-container img{
@@ -93,6 +94,3 @@ p{
   margin-left: 20px;
 }
 
-.list-entry .actions {
-  color: red;
-}

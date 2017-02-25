@@ -5,7 +5,7 @@
   padding: 10px 20px;
   text-decoration: none;
   color: #616161;
-  font-size: 0.8rem;
+  /*font-size: 0.8rem;*/
   border: none; 
   text-align: center;
 }
@@ -18,7 +18,7 @@
 .filter-btn{
   text-decoration: none;
   padding: 3px;
-  color: #616161;
+  color: #616161; 
 }
 
 .filter-btn:hover{
@@ -43,4 +43,9 @@
   text-decoration: none;
   font-size: 0.8rem;
   padding: 10px 20px;
+  align-self: center;
+}
+
+.view-btn:hover{
+
 }
