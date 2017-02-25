@@ -58,10 +58,6 @@ body{
 }
 
 
-.filter .highlight a{
-  color: #DB1D73;
-}
-
 .info-list{
   display: flex;
   flex-direction: column;

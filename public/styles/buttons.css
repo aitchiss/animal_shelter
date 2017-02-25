@@ -25,3 +25,14 @@
   border-bottom: solid 3px #DB1D73;
   padding: 3px 3px 0px 3px;
 }
+
+.filter-highlight-btn{
+  color: #DB1D73;
+  padding: 3px;
+  text-decoration: none;
+}
+
+.filter-highlight-btn:hover{
+  padding: 3px 3px 0px 3px;
+  border-bottom: solid 3px #DB1D73;
+}
