@@ -1,14 +1,23 @@
-<p>Select view: 
-  <ul>
-    <li><a href="/animals">All Animals</a></li>
-    <li><a href="/animals/adoptable">Adoptable Animals</a></li>
-      <%@types.each do |type|%>
-      <li><a href='/animals/types/<%=type.id%>'>All <%=type.type.capitalize%>s</a>   </li>
-      <%end%>
-  </ul>
-</p>
-
 <h1><%=@header%></h1>
+
+<div class="filter">
+  <div class="col">
+    filter:
+  </div>
+  <div class="col">
+    <a href="/animals">all</a>
+  </div>
+  <div class = "col">
+    <a href="/animals/adoptable">adoptable</a>
+  </div>
+  <%@types.each do |type|%>
+    <div class="col">
+      <a href='/animals/types/<%=type.id%>'><%=type.type%>s</a>
+    </div>
+  <%end%>
+</div>
+
+
 
 
 

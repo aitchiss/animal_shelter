@@ -8,7 +8,7 @@ require_relative ('../db/sql_runner.rb')
 
 get '/animals' do
   @animals = Animal.all
-  @header = "Current view: All Animals"
+  @header = "animals: all"
   @types = AnimalType.all
   erb( :"animals/index" )
 end
@@ -16,7 +16,7 @@ end
 get '/animals/adoptable' do
   @animals = Animal.get_all_adoptable
   @types = AnimalType.all
-  @header = "Current View: Adoptable Animals"
+  @header = "animals: all adoptable"
   erb(:'animals/index')
 end
 
@@ -24,7 +24,7 @@ get '/animals/types/:id' do
   @animals = Animal.get_by_type(params['id'].to_i)
   type = @animals[0].get_type
   @types = AnimalType.all
-  @header = "Current View: All #{type.capitalize}s"
+  @header = "animals: all #{type}s"
  
   erb(:"animals/index")
   

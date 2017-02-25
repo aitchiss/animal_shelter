@@ -17,7 +17,7 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  color: red;
+  color: #616161;
 }
 
 .nav{
@@ -39,5 +39,41 @@ body{
 
 .nav a:hover{
   border-bottom: solid 5px #79059E;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.headline{
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.headline p{
+  padding: 10px;
+}
+
+.filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.filter a{
+  text-decoration: none;
+  color: #616161;
+}
+
+.filter a:hover{
+  border-bottom: solid 3px #DB1D73;
+}
+
+h1, h2, h3, h4, h5, p{
+  margin-left: 20px;
 }
 
