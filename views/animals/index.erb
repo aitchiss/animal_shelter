@@ -12,9 +12,7 @@
   <div class="col">
   |
   </div>
-  <!-- <div class="col highlight"> -->
   <a class="filter-highlight-btn" href="/animals/new">admit new animal</a>
-  <!-- </div> -->
 </div>
 
 <div class="info-list">
@@ -30,11 +28,10 @@
       <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
     </div>
     <div class="actions">
-      <p><a href="/animals/<%= animal.id %>">view</a></p>
-      hhhii
+      <p><a class="view-btn" href="/animals/<%= animal.id %>">view</a></p>
     </div>
   </div>
-<!-- add type etc? -->
+
 <% end %>
 
 </div>

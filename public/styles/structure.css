@@ -1,19 +1,22 @@
+.banner{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .banner img{
   height: 100%;
   width: 100%;
-  position: relaive;
+  position: relative;
 }
 
 .banner h1{
   
   font-family: 'Open Sans', sans-serif;
-  top: 120px;
-  margin-left: 20px;
-  margin-top: 10px;
   font-size: 2rem;
-  width: 30%;
   position: absolute;
   color: white;
+  align-self: center;
 }
 
 body{
