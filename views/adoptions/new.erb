@@ -1,22 +1,29 @@
-<h1>Process adoption</h1>
+<div class="heading">
+  <h1>process adoption</h1>
+</div>
 
 <form method="POST" action="/adoptions">
 
-<label for "animal">Select animal: </label>
-<select id="animal_id" name="animal_id">
-  <% @animals.each do |animal| %>
-    <% if animal.get_adoption_status == "Ready for adoption" %>
-      <option value="<%= animal.id %>"><%= animal.name%> the <%= animal.breed%> <%= animal.get_type%></option>
+<div class="form-row">
+  <label for "animal">select animal: </label>
+  <select id="animal_id" name="animal_id">
+    <% @animals.each do |animal| %>
+      <% if animal.get_adoption_status == "Ready for adoption" %>
+        <option value="<%= animal.id %>"><%= animal.name%> the <%= animal.breed%> <%= animal.get_type%></option>
+      <%end%>
     <%end%>
-  <%end%>
-</select>
+  </select>
+</div>
 
-<label for "owner">Select owner: </label>
-<select id="owner_id" name="owner_id">
-  <% @owners.each do |owner| %>
-    <option value = "<%= owner.id%>"><%= owner.first_name%> <%= owner.last_name%></option>
-  <%end%>
-</select>
+
+<div class="form-row">
+  <label for "owner">select owner: </label>
+  <select id="owner_id" name="owner_id">
+    <% @owners.each do |owner| %>
+      <option value = "<%= owner.id%>"><%= owner.first_name%> <%= owner.last_name%></option>
+    <%end%>
+  </select>
+</div>
 
 <input type="submit" value="Submit" />
 
