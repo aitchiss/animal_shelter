@@ -51,21 +51,15 @@ body{
   justify-content: space-around;
   width: 50%;
   margin-left: 10px;
-
 }
 
-.filter a{
-  text-decoration: none;
-  color: #616161;
+.filter .col{
+  padding: 3px;
 }
+
 
 .filter .highlight a{
   color: #DB1D73;
-}
-
-
-.filter a:hover{
-  border-bottom: solid 3px #DB1D73;
 }
 
 .info-list{

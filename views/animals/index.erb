@@ -4,16 +4,10 @@
   <div class="col">
     filter:
   </div>
-  <div class="col">
-    <a href="/animals">all</a>
-  </div>
-  <div class = "col">
-    <a href="/animals/adoptable">adoptable</a>
-  </div>
+    <a class="filter-btn" href="/animals">all</a>
+    <a class="filter-btn" href="/animals/adoptable">adoptable</a>
   <%@types.each do |type|%>
-    <div class="col">
-      <a href='/animals/types/<%=type.id%>'><%=type.type%>s</a>
-    </div>
+      <a class="filter-btn" href='/animals/types/<%=type.id%>'><%=type.type%>s</a>
   <%end%>
   <div class="col">
   |
