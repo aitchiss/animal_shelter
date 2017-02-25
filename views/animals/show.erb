@@ -1,13 +1,23 @@
-<h1>Profile: <%= @animal.name%> the <%= @animal.breed%></h1>
+<div class="heading">
+  <h1>Profile: <%= @animal.name%> the <%= @animal.breed%></h1>
+</div>
 
-<img src="<%= @animal.photo_file_path%>" />
-<p>Admission date: <%= @animal.admission_date_formatted%></p>
-<!-- <p>Type: <%= @animal.get_type%></p> not sure this is really needed!-->
-<p>Breed: <%= @animal.breed%></p>
-<p>Adoption status: <%= @animal.get_adoption_status%></p>
 
-<a href="/animals/<%= @animal.id%>/edit">Update details</a>
+<div class="profile">
+  <div class="profile-img-container">
+    <img src="<%= @animal.photo_file_path%>" />
+  </div>
+  <div class="profile-details">
+    <p><strong>Admission date:</strong> <%= @animal.admission_date_formatted%></p>
+    <p><strong>Breed: </strong><%= @animal.breed%></p>
+    <p><strong>Adoption status: </strong><%= @animal.get_adoption_status%></p>
+  
 
-<form method="POST" action="/animals/<%=@animal.id%>/delete">
-<input type="submit" value="Delete Record">
-</form>
+  <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update details</a>
+
+  <form method="POST" action="/animals/<%=@animal.id%>/delete">
+  <input type="submit" value="delete record">
+  </form>
+  </div>
+
+</div>
