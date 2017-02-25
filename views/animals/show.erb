@@ -1,5 +1,5 @@
 <div class="heading">
-  <h1>Profile: <%= @animal.name%> the <%= @animal.breed%></h1>
+  <h1>profile: <%= @animal.name%> the <%= @animal.breed%></h1>
 </div>
 
 
@@ -8,11 +8,10 @@
     <img src="<%= @animal.photo_file_path%>" />
   </div>
   <div class="profile-details">
-    <p><strong>Admission date:</strong> <%= @animal.admission_date_formatted%></p>
-    <p><strong>Breed: </strong><%= @animal.breed%></p>
-    <p><strong>Adoption status: </strong><%= @animal.get_adoption_status%></p>
-  
-
+    <p><strong>admission date:</strong> <%= @animal.admission_date_formatted%></p>
+    <p><strong>breed: </strong><%= @animal.breed%></p>
+    <p><strong>adoption status: </strong><%= @animal.get_adoption_status%></p>
+   
   <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update details</a>
 
   <form method="POST" action="/animals/<%=@animal.id%>/delete">

@@ -57,18 +57,18 @@
   text-decoration: none;
   font-size: 0.8rem;
   padding: 10px 20px;
-  align-self: center;
-  margin: 20px 125px;
+  margin: 20px 127px;
 
 }
 
-input[type="submit"]{
+form input[type="submit"]{
   border: none;
   background-color: #DB1D73;
   color: white;
   text-decoration: none;
   font-size: 0.8rem;
   padding: 10px 20px;
-  margin: 20px 125px;
+  margin: 20px;
+  
 
 }
