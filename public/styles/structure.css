@@ -124,3 +124,40 @@ p{
   margin: 0;
   width: 375px;
 }
+
+form{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px 10px 20px;
+
+}
+
+.form-row{
+  flex-basis: auto;
+  flex-direction: row;
+  align-self: space-around;
+  width: 400px;
+}
+
+.form-row label{
+  display: flex;
+  flex-direction: row;
+  align-self: space-around;
+  font-size: 1.25rem;
+}
+
+.form-row input{
+  display: flex;
+  flex-direction: row;
+  align-self: space-around;
+  font-size: 1.25rem;
+  width: 400px;
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  color: #9e9a9a;
+  background-color: #F5F5F5;
+  border: none;
+}
+

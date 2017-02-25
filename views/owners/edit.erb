@@ -1,19 +1,30 @@
-<h1>Update owner details</h1>
+<div class="heading">
+  <h1>update owner details</h1>
+</div>
+
 
 <form method="POST" action="/owners/<%= @owner.id%>">
 
-<label for "first_name">First Name: </label>
-<input type="text" value="<%= @owner.first_name%>" name="first_name" id="first_name">
+<div class="form-row">
+  <label for "first_name">first name: </label>
+  <input type="text" value="<%= @owner.first_name%>" name="first_name" id="first_name">
+</div>
 
-<label for "last_name">Last Name: </label>
-<input type="text" value="<%= @owner.last_name%>" name="last_name" id="last_name">
+<div class="form-row">
+  <label for "last_name">last name: </label>
+  <input type="text" value="<%= @owner.last_name%>" name="last_name" id="last_name">
+</div>
 
-<label for "address">Address: </label>
-<input type="text" value="<%= @owner.address%>" name="address" id="address">
+<div class="form-row">
+  <label for "address">address: </label>
+  <input type="text" value="<%= @owner.address%>" name="address" id="address">
+</div>
 
-<label for "phone_number">Contact number: </label>
-<input type="text" value="<%= @owner.phone_number%>" name="phone_number" id="phone_number">
+<div class="form-row">
+<label for "phone_number">contact number: </label>
+  <input type="text" value="0<%= @owner.phone_number%>" name="phone_number" id="phone_number">
+</div>
 
-<input type="submit" value="Update details" />
+<input type="submit" value="update details" />
 
 </form>
