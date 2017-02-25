@@ -22,13 +22,12 @@ body{
 }
 
 .nav{
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 10px 10px;
 }
-
 
 .row {
   display: flex;
