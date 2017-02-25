@@ -58,6 +58,7 @@ end
 
 post '/animals' do
   animal = Animal.new(params)
+  animal.admission_date = animal.admission_date_formatted
   animal.save
   erb(:'animals/create')
 end
