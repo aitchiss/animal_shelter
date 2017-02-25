@@ -94,6 +94,10 @@ body{
   margin: 10px;
 }
 
+.info-container{
+  width: 350px;
+}
+
 .img-container img{
   height: 100px;
   width: 100px;

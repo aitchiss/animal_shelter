@@ -35,7 +35,9 @@
       <p>Admission Date: <%= animal.admission_date_formatted %></p>
       <p>Adoption Status: <%= animal.get_adoption_status %></p>
     </div>
-    <p><a href="/animals/<%= animal.id %>">View and Update</a></p>
+    <div class="actions">
+      <p><a href="/animals/<%= animal.id %>">View and Update</a></p>
+    </div>
   </div>
 <!-- add type etc? -->
 <% end %>
