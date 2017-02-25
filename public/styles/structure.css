@@ -161,3 +161,16 @@ form{
   border: none;
 }
 
+.form-row select{
+  flex-basis: auto;
+  width: 400px;
+  height: 40px;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+  font-size: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  color: #9e9a9a;
+  background-color: #F5F5F5;
+  border: none;
+}
+
