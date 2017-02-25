@@ -9,6 +9,7 @@
   font-family: 'Open Sans', sans-serif;
   top: 120px;
   margin-left: 20px;
+  margin-top: 10px;
   font-size: 2rem;
   width: 30%;
   position: absolute;
@@ -61,7 +62,9 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30%;
+  width: 50%;
+  margin-left: 10px;
+
 }
 
 .filter a{
@@ -69,11 +72,40 @@ body{
   color: #616161;
 }
 
+.filter .highlight a{
+  color: #DB1D73;
+}
+
+
 .filter a:hover{
   border-bottom: solid 3px #DB1D73;
 }
 
-h1, h2, h3, h4, h5, p{
+.info-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.list-entry{
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F5;
+  width: 50%;
+  margin: 10px;
+}
+
+.img-container img{
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+h1, h2, h3, h4, h5{
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+p{
   margin-left: 20px;
 }
 

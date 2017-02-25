@@ -15,18 +15,29 @@
       <a href='/animals/types/<%=type.id%>'><%=type.type%>s</a>
     </div>
   <%end%>
+  <div class="col">
+  |
+  </div>
+  <div class="col highlight">
+  <a href="/animals/new">admit new animal</a>
+  </div>
 </div>
 
-
-
-
-
-<p><a href="/animals/new">Admit new animal</a></p>
+<div class="info-list">
 
 <% @animals.each do |animal| %>
-  <p>Name: <%= animal.name %></p>
-  <p>Admission Date: <%= animal.admission_date_formatted %></p>
-  <p>Adoption Status: <%= animal.get_adoption_status %></p>
-  <p><a href="/animals/<%= animal.id %>">View and Update</a></p>
+  <div class="list-entry">
+    <div class="img-container">
+      <img src="<%= animal.photo_file_path%>" />
+    </div>
+    <div class="info-container">
+      <p>Name: <%= animal.name %></p>
+      <p>Admission Date: <%= animal.admission_date_formatted %></p>
+      <p>Adoption Status: <%= animal.get_adoption_status %></p>
+    </div>
+    <p><a href="/animals/<%= animal.id %>">View and Update</a></p>
+  </div>
 <!-- add type etc? -->
 <% end %>
+
+</div>
