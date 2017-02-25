@@ -1,10 +1,24 @@
-<h1>Registered Owners</h1>
-<p><a href="/owners/new">Add new owner</a></p>
+<div class="heading">
+  <h1>registered owners</h1>
+</div>
 
+<div class="filter">
+<a class="filter-highlight-btn" href="/owners/new">add new owner</a>
+</div>
+
+<div class="info-list">
 <% @owners.each do |owner| %>
-  <p>First Name: <%= owner.first_name%></p>
-  <p>Last Name: <%= owner.last_name%></p>
-  <p>Animals adopted: <%= owner.animals.count%></p>
-  <p><a href="/owners/<%= owner.id%>">View profile</a></p>
+<div class="list-entry">
+  <div class="img-container">
+    <img src="/images/owner_avatar.png" />
+  </div>
+  <div class="info-container">
+  <p><strong>First Name:</strong> <%= owner.first_name%></p>
+  <p><strong>Last Name:</strong> <%= owner.last_name%></p>
+  <p><strong>Animals adopted:</strong> <%= owner.animals.count%></p>
+  </div>
+  <a class="view-btn" href="/owners/<%= owner.id%>">view profile</a>
+  </div>
 
 <%end%>
+</div>
