@@ -1,37 +1,50 @@
-<h1>Admit new animal</h1>
+<div class="heading">
+  <h1>admit new animal</h1>
+</div>
 
 <form method="POST" action="/animals">
 
-<label for "name">Name: </label>
-<input type="text" name="name" id='name'>
+<div class="form-row">
+  <label for "name">name: </label>
+  <input type="text" name="name" id='name'>
+</div>
 
-<label for "admission_date">Admission date: </label>
-<input type="text" name="admission_date" id="admission_date">
+<div class="form-row">
+  <label for "admission_date">admission date: </label>
+  <input type="text" name="admission_date" id="admission_date" value="<%= @date%>">
+</div>
 
-<label for "animal_type">Type: </label>
-<select id="animal_type" name="type_id">
-<% @animal_types.each do |type| %>
-<option value="<%=type.id%>"> <%= type.type %></option>
-<%end%>
+<div class="form-row">
+  <label for "animal_type">type: </label>
+  <select id="animal_type" name="type_id">
+    <% @animal_types.each do |type| %>
+      <option value="<%=type.id%>"> <%= type.type %></option>
+    <%end%>
 
-</select>
+  </select>
+</div>
 
-<label for "breed">Breed: </label>
-<input type="text" name="breed" id="breed" >
+<div class="form-row">
+  <label for "breed">breed: </label>
+  <input type="text" name="breed" id="breed" >
+</div>
 
-<label for "adoption_status">Adoption status: </label>
-<select id="adoption_status" name="adoption_status_id">
+<div class="form-row">
+  <label for "adoption_status">adoption status: </label>
+  <select id="adoption_status" name="adoption_status_id">
 
-<% @adoption_statuses.each do |status|%>
-<option value="<%= status.id %>" ><%= status.status%></option>
+    <% @adoption_statuses.each do |status|%>
+      <option value="<%= status.id %>" ><%= status.status%></option>
 
-<%end%>
+    <%end%>
+  </select>
+</div>
 
-</select>
+<div class="form-row">
+  <label for "photo_file_path">photo location: </label>
+  <input type="text" name="photo_file_path" id="photo_file_path">
+</div>
 
-<label for "photo_file_path">Photo location: </label>
-<input type="text" name="photo_file_path" id="photo_file_path">
-
-<input type="submit" value="Admit animal" />
+<input type="submit" value="admit animal" />
 
 </form>

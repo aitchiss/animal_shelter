@@ -34,6 +34,11 @@ end
 get '/animals/new' do
   @adoption_statuses = AdoptionStatus.all
   @animal_types = AnimalType.all
+  @date = Date.today.to_s
+  date_components = @date.split('-')
+  date_components.reverse!
+  @date = date_components.join('/')
+
   erb(:"animals/new")
 end
 
