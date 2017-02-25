@@ -29,18 +29,6 @@ body{
   margin: 10px 10px;
 }
 
-.nav a{
-  background-color: #E0E0E0;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #616161;
-  font-size: 0.8rem;
-  border: none; 
-}
-
-.nav a:hover{
-  border-bottom: solid 5px #79059E;
-}
 
 .row {
   display: flex;
@@ -113,3 +101,6 @@ p{
   margin-left: 20px;
 }
 
+.list-entry .actions {
+  color: red;
+}

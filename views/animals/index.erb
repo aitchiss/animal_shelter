@@ -31,12 +31,13 @@
       <img src="<%= animal.photo_file_path%>" />
     </div>
     <div class="info-container">
-      <p>Name: <%= animal.name %></p>
-      <p>Admission Date: <%= animal.admission_date_formatted %></p>
-      <p>Adoption Status: <%= animal.get_adoption_status %></p>
+      <p><strong>Name: </strong><%= animal.name %></p>
+      <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
+      <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
     </div>
     <div class="actions">
-      <p><a href="/animals/<%= animal.id %>">View and Update</a></p>
+      <p><a href="/animals/<%= animal.id %>">view</a></p>
+      hhhii
     </div>
   </div>
 <!-- add type etc? -->

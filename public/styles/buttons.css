@@ -1,0 +1,13 @@
+
+.nav-btn{
+  background-color: #E0E0E0;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #616161;
+  font-size: 0.8rem;
+  border: none; 
+}
+
+.nav-btn:hover{
+  border-bottom: solid 5px #79059E;
+}
