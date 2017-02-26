@@ -69,6 +69,13 @@ post '/animals/:id' do
   animal.change_adoption_status(adoption_status_id)
   animal.name = params['name']
   animal.breed = params['breed']
+  animal.photo_file_path = params['photo_file_path']
+  animal.needs_outside_space = params['needs_outside_space']
+  animal.can_live_with_children = params['can_live_with_children']
+  animal.can_live_with_same_type = params['can_live_with_same_type']
+  animal.can_live_with_other_type = params['can_live_with_other_type']
+  animal.needs_special_attention = params['needs_special_attention']
+
   animal.update
   redirect to('/animals')
 
