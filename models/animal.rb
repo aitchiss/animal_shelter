@@ -69,7 +69,30 @@ class Animal
   end
 
   def update()
-    sql = "UPDATE animals SET (name, admission_date, type_id, breed, adoption_status_id, photo_file_path) = ('#{@name}', '#{@admission_date}', #{@type_id}, '#{@breed}', #{@adoption_status_id}, '#{@photo_file_path}') WHERE id = #{@id};"
+    sql = "UPDATE animals SET 
+        (name, 
+        admission_date, 
+        type_id, 
+        breed, 
+        adoption_status_id, 
+        photo_file_path,
+        needs_outside_space,
+        can_live_with_children,
+        can_live_with_same_type, 
+        can_live_with_other_type, 
+        needs_special_attention) = 
+        ('#{@name}', 
+        '#{@admission_date}', 
+        #{@type_id}, 
+        '#{@breed}', 
+        #{@adoption_status_id}, 
+        '#{@photo_file_path}',
+        '#{@needs_outside_space}',
+        '#{@can_live_with_children}', 
+        '#{@can_live_with_same_type}', 
+        '#{@can_live_with_other_type}', 
+        '#{@needs_special_attention}') 
+        WHERE id = #{@id};"
     SqlRunner.run(sql)
   end
 

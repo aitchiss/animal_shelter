@@ -19,7 +19,29 @@ class Owner
   end
 
   def save()
-    sql = "INSERT INTO owners (first_name, last_name, address, phone_number) VALUES ('#{@first_name}', '#{@last_name}', '#{@address}', #{@phone_number}) RETURNING *"
+    sql = "INSERT INTO owners 
+    (first_name, 
+    last_name, 
+    address, 
+    phone_number,
+    has_outside_space,
+    has_children_at_home,
+    has_cats,
+    has_dogs,
+    has_rabbits,
+    can_give_special_attention) 
+    VALUES 
+    ('#{@first_name}', 
+    '#{@last_name}', 
+    '#{@address}', 
+    #{@phone_number},
+    '#{@has_outside_space}',
+    '#{@has_children_at_home}',
+    '#{@has_cats}',
+    '#{@has_dogs}',
+    '#{@has_rabbits}',
+    '#{@can_give_special_attention}') 
+    RETURNING *"
     owner_hash = SqlRunner.run(sql).first
     @id = owner_hash['id'].to_i
   end
@@ -33,7 +55,28 @@ class Owner
   end
 
   def update()
-    sql = "UPDATE owners SET (first_name, last_name, address, phone_number) = ('#{@first_name}', '#{@last_name}', '#{@address}', '#{@phone_number}') WHERE id = #{@id} "
+    sql = "UPDATE owners SET 
+    (first_name, 
+    last_name, 
+    address, 
+    phone_number,
+    has_outside_space,
+    has_children_at_home,
+    has_cats,
+    has_dogs,
+    has_rabbits,
+    can_give_special_attention) = 
+    ('#{@first_name}', 
+    '#{@last_name}', 
+    '#{@address}', 
+    '#{@phone_number}',
+    '#{@has_outside_space}',
+    '#{@has_children_at_home}',
+    '#{@has_cats}',
+    '#{@has_dogs}',
+    '#{@has_rabbits}',
+    '#{@can_give_special_attention}') 
+    WHERE id = #{@id} "
     SqlRunner.run(sql)
   end
 
