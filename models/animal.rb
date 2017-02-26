@@ -2,7 +2,7 @@ class Animal
 
   attr_reader :id, :adoption_status_id,  :type_id
 
-  attr_accessor :photo_file_path, :breed, :name, :admission_date
+  attr_accessor :photo_file_path, :breed, :name, :admission_date, :needs_outside_space, :can_live_with_children, :can_live_with_same_type, :can_live_with_other_type, :needs_special_attention
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,11 @@ class Animal
     @breed = options['breed']
     @adoption_status_id = options['adoption_status_id'].to_i
     @photo_file_path = options['photo_file_path']
+    @needs_outside_space = options['needs_outside_space']
+    @can_live_with_children = options['can_live_with_children']
+    @can_live_with_same_type = options['can_live_with_same_type']
+    @can_live_with_other_type = options['can_live_with_other_type']
+    @needs_special_attention = options['needs_special_attention']
   end
 
   def save()

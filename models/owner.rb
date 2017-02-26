@@ -2,7 +2,7 @@ class Owner
 
   attr_reader :id
 
-  attr_accessor :first_name, :last_name, :address, :phone_number
+  attr_accessor :first_name, :last_name, :address, :phone_number, :has_outside_space, :has_children_at_home, :has_cats, :has_dogs, :has_rabbits, :can_give_special_attention
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -10,6 +10,12 @@ class Owner
     @last_name = options['last_name']
     @address = options['address']
     @phone_number = options['phone_number']
+    @has_outside_space = options['has_outside_space']
+    @has_children_at_home = options['has_children_at_home']
+    @has_cats = options['has_cats']
+    @has_dogs = options['has_dogs']
+    @has_rabbits = options['has_rabbits']
+    @can_give_special_attention = options['can_give_special_attention']
   end
 
   def save()

@@ -21,7 +21,13 @@ CREATE TABLE owners(
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   address VARCHAR(255),
-  phone_number VARCHAR(255)
+  phone_number VARCHAR(255),
+  has_outside_space BOOLEAN,
+  has_children_at_home BOOLEAN,
+  has_cats BOOLEAN,
+  has_dogs BOOLEAN,
+  has_rabbits BOOLEAN,
+  can_give_special_attention BOOLEAN
 );
 
 CREATE TABLE animals(
@@ -31,7 +37,12 @@ CREATE TABLE animals(
   type_id INT4 REFERENCES animal_types(id),
   breed VARCHAR(255),
   adoption_status_id INT4 REFERENCES adoption_statuses(id),
-  photo_file_path VARCHAR(255)
+  photo_file_path VARCHAR(255),
+  needs_outside_space BOOLEAN,
+  can_live_with_children BOOLEAN,
+  can_live_with_same_type BOOLEAN,
+  can_live_with_other_type BOOLEAN,
+  needs_special_attention BOOLEAN
 );
 
 CREATE TABLE adoptions(
