@@ -21,10 +21,29 @@ class Animal
 
   def save()
     sql = "INSERT INTO animals 
-          (name, admission_date, type_id, breed, 
-          adoption_status_id, photo_file_path) 
-          VALUES ('#{@name}', '#{@admission_date}', #{@type_id}, '#{@breed}', 
-          #{@adoption_status_id}, '#{@photo_file_path}') 
+          (name, 
+          admission_date, 
+          type_id, 
+          breed, 
+          adoption_status_id, 
+          photo_file_path,
+          needs_outside_space,
+          can_live_with_children,
+          can_live_with_same_type, 
+          can_live_with_other_type, 
+          needs_special_attention) 
+          VALUES 
+          ('#{@name}', 
+          '#{@admission_date}', 
+          #{@type_id}, 
+          '#{@breed}', 
+          #{@adoption_status_id}, 
+          '#{@photo_file_path}', 
+          '#{@needs_outside_space}',
+          '#{@can_live_with_children}', 
+          '#{@can_live_with_same_type}', 
+          '#{@can_live_with_other_type}', 
+          '#{@needs_special_attention}') 
           RETURNING * ;"
 
     animal_hash = SqlRunner.run(sql).first
@@ -113,7 +132,7 @@ class Animal
   end
 
   def self.get_all_adoptable
-    sql = "SELECT animals.* FROM animals INNER JOIN adoption_statuses ON adoption_statuses.id = animals.adoption_status_id WHERE adoption_statuses.status = 'Ready for adoption' "
+    sql = "SELECT animals.* FROM animals INNER JOIN adoption_statuses ON adoption_statuses.id = animals.adoption_status_id WHERE adoption_statuses.status = 'ready for adoption' "
     animals = Animal.get_many(sql)
     return animals
 
