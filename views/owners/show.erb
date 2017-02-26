@@ -4,11 +4,43 @@
 
 <div class="profile">
   <div class="profile-details">
+  <p><strong>contact details:</strong></p>
   <p><strong>name: </strong><%= @owner.first_name%> <%= @owner.last_name%></p>
   <p><strong>address:</strong></p>
   <p><%= @owner.address%></p>
-  <p><strong>contact number:</strong> 0<%= @owner.phone_number%></p>
+  <p><strong>phone number:</strong> 0<%= @owner.phone_number%></p>
   <hr/>
+  <p><strong>home environment:</strong></p>
+  <ul>
+    <%if @owner.has_outside_space == "t"%>
+      <li>sizeable outside space</li>
+    <%else%>
+      <li>little or no outside space</li>
+    <%end%>
+    <%if @owner.has_children_at_home == "t"%>
+      <li>young children in the home</li>
+    <%else%>
+      <li>no young children in the home</li>
+    <%end%>
+    <%if @owner.has_cats == "t"%>
+      <li>cats already in the home</li>
+    <%end%>
+    <%if @owner.has_dogs == "t"%>
+      <li>dogs already in the home</li>
+    <%end%>
+    <%if @owner.has_rabbits == "t"%>
+      <li>rabbits already in the home</li>
+    <%end%>
+    <%if @owner.can_give_special_attention == "t"%>
+      <li>able to give close attention to animals with needs</li>
+    <%end%>
+  </ul>
+  <hr/>
+  <p><strong>previous adoptions:</strong></p>
+  <%if @owner.animals == []%>
+    <p>none</p>
+    <hr/>
+  <%end%>
   
 
   <%adoption_no = 1 %>

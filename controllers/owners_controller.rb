@@ -31,11 +31,7 @@ post '/owners' do
 end
 
 post '/owners/:id' do
-  @owner = Owner.find(params['id'].to_i)
-  @owner.first_name = params['first_name']
-  @owner.last_name = params['last_name']
-  @owner.address = params['address']
-  @owner.phone_number = params['phone_number']
+  @owner = Owner.new(params)
   @owner.update
   redirect to('/owners')
 end
