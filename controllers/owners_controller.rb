@@ -34,7 +34,11 @@ get '/owners/:id/match' do
   erb(:"owners/matches")
 end
 
-
+get '/owners/:id/match/:animal_id' do
+  @owner = Owner.find(params['id'].to_i)
+  @animal = Animal.find(params['animal_id'].to_i)
+  erb(:"owners/showanimal")
+end
 
 post '/owners' do
   owner = Owner.new(params)

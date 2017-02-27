@@ -13,6 +13,14 @@ get '/adoptions/new' do
   erb(:"adoptions/new")
 end
 
+get '/adoptions/new/:owner_id/:animal_id' do
+  @animals = Animal.all
+  @owners = Owner.all
+  @owner = Owner.find(params['owner_id'].to_i)
+  @animal = Animal.find(params['animal_id'].to_i)
+  erb(:"adoptions/new")
+end
+
 
 post '/adoptions' do
   date = Date.today
