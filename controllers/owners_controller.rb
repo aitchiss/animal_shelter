@@ -22,6 +22,18 @@ get '/owners/:id/edit' do
   erb(:"owners/edit")
 end
 
+get '/owners/:id/match' do
+  @owner = Owner.find(params['id'].to_i)
+  animals = Animal.all
+  @matched_animals = []
+  animals.each do |animal|
+    if @owner.match(animal.id) == true
+      @matched_animals << animal
+    end
+  end
+  erb(:"owners/matches")
+end
+
 
 
 post '/owners' do
