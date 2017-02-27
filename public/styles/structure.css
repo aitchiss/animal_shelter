@@ -129,6 +129,11 @@ p{
   justify-content: flex-start;
 }
 
+.owner-adoptions a{
+  text-decoration: none;
+  color: #DB1D73;
+}
+
 .profile{
   display: flex;
   flex-direction: column;
