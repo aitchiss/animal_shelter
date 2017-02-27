@@ -10,7 +10,10 @@
   <div class="profile-details">
     <p><strong>admission date:</strong> <%= @animal.admission_date_formatted%></p>
     <p><strong>breed: </strong><%= @animal.breed%></p>
-    <p><strong>adoption status: </strong><%= @animal.get_adoption_status%></p>
+    <p><strong>adoption status: </strong><%= @animal.get_adoption_status%>
+    <% if @animal.get_adoption_status == "adopted"%>
+     by <a href="/owners/<%= @animal.owner.id%>"><%= @animal.owner.first_name %> <%=@animal.owner.last_name%></a>
+     <%end%></p>
     <p><strong>needs:</strong></p>
       <ul>
         <%if @animal.needs_outside_space == 't' %>

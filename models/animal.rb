@@ -117,6 +117,13 @@ class Animal
     return animal_type.type
   end
 
+  def owner
+    sql = "SELECT owners.* FROM owners INNER JOIN adoptions ON adoptions.owner_id = owners.id WHERE adoptions.animal_id = #{@id} ;"
+    owner_hash = SqlRunner.run(sql).first
+    owner = Owner.new(owner_hash)
+    return owner
+  end
+
   def change_adoption_status(status_id)
     @adoption_status_id = status_id
   end

@@ -20,6 +20,7 @@
 
 }
 
+
 body{
   font-family: 'Roboto', sans-serif;
   color: #616161;
@@ -132,6 +133,11 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.profile-details a{
+  text-decoration: none;
+  color: #DB1D73;
 }
 
 .profile-img-container img{
