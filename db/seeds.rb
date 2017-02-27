@@ -160,7 +160,7 @@ owner2.save
 adoption_flopsy_keith = Adoption.new({
   'owner_id' => owner1.id,
   'animal_id' => mr_flopsy.id,
-  'date' => "2017/01/05"
+  'date' => "2017/02/22"
   })
 
 adoption_flopsy_keith.save

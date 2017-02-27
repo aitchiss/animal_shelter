@@ -21,4 +21,13 @@ class Adoption
     SqlRunner.run(sql)
   end
 
+  def self.weekly_adoptions
+    today = Date.today
+    week_ago = (today - 7)
+    sql = "SELECT * FROM adoptions WHERE date BETWEEN '#{week_ago}' AND '#{today}'"
+    adoptions_hashes = SqlRunner.run(sql)
+    number_of_adoptions = adoptions_hashes.count
+    return number_of_adoptions
+  end
+
 end
