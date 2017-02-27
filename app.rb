@@ -10,5 +10,6 @@ require_relative('./controllers/adoptions_controller.rb')
 get '/' do
   @weekly_adoptions = Adoption.weekly_adoptions
   @animals_needing_adoption = Animal.count_need_adoption
+  @animals_in_care = Animal.count_in_care
   erb(:index)
 end
