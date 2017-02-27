@@ -2,6 +2,7 @@ require ('sinatra')
 require ('sinatra/contrib/all')
 require_relative ('../models/animal.rb')
 require_relative ('../models/adoption_status.rb')
+require_relative('../models/owner.rb')
 require_relative ('../models/adoption.rb')
 require_relative ('../models/animal_type.rb')
 require_relative ('../db/sql_runner.rb')
@@ -54,6 +55,19 @@ get '/animals/:id/edit' do
   erb( :"animals/edit" )
 end
 
+get '/animals/:id/match' do
+  @animal = Animal.find(params['id'])
+  owners = Owner.all
+  @matched_owners = []
+  owners.each do |owner|
+    if owner.match(@animal.id) == true
+      @matched_owners << owner 
+    end
+  end
+  erb(:"animals/matches")
+
+end
+
 
 
 post '/animals' do
@@ -65,6 +79,7 @@ end
 
 post '/animals/:id' do
   animal = Animal.find(params['id'].to_i)
+
   adoption_status_id = params['adoption_status_id'].to_i
   animal.change_adoption_status(adoption_status_id)
   animal.name = params['name']

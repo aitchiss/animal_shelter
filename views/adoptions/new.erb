@@ -8,7 +8,7 @@
   <label for "animal">select animal: </label>
   <select id="animal_id" name="animal_id">
     <% @animals.each do |animal| %>
-      <% if animal.get_adoption_status == "Ready for adoption" %>
+      <% if animal.get_adoption_status == "ready for adoption" %>
         <option value="<%= animal.id %>"><%= animal.name%> the <%= animal.breed%> <%= animal.get_type%></option>
       <%end%>
     <%end%>

@@ -1,0 +1,21 @@
+<div class="heading">
+  <h1>matching owners for <%=@animal.name%></h1>
+</div>
+
+
+<div class="info-list">
+<% @matched_owners.each do |owner| %>
+  <div class="list-entry">
+    <div class="img-container">
+      <img src="/images/owner_avatar.png" />
+    </div>
+    <div class="info-container">
+    <p><strong>First Name:</strong> <%= owner.first_name%></p>
+    <p><strong>Last Name:</strong> <%= owner.last_name%></p>
+    <p><strong>Animals adopted:</strong> <%= owner.animals.count%></p>
+    </div>
+    <a class="view-btn" href="/owners/<%= owner.id%>">view</a>
+    </div>
+
+<%end%>
+</div>

@@ -13,6 +13,7 @@ get '/adoptions/new' do
   erb(:"adoptions/new")
 end
 
+
 post '/adoptions' do
   date = Date.today
   owner_id = params['owner_id'].to_i

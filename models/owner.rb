@@ -87,7 +87,7 @@ class Owner
 
   def has_enough_space(animal_id)
     animal = Animal.find(animal_id)
-    if animal.needs_outside_space == "t" && @has_outside_space == "false"
+    if animal.needs_outside_space == "t" && @has_outside_space == "f"
         return false
     end
     return true
@@ -100,21 +100,21 @@ class Owner
     case animal_type
 
     when "cat"
-        return false if animal.can_live_with_same_type == "f" && @has_cats == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_dogs == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "true"
+        return false if animal.can_live_with_same_type == "f" && @has_cats == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_dogs == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "t"
         return true
 
     when "dog"
-        return false if animal.can_live_with_same_type == "f" && @has_dogs == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_cats == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "true"
+        return false if animal.can_live_with_same_type == "f" && @has_dogs == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_cats == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "t"
         return true
 
     when "rabbit"
-        return false if animal.can_live_with_same_type == "f" && @has_rabbits == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_dogs == "true"
-        return false if animal.can_live_with_other_type == "f" && @has_cats == "true"
+        return false if animal.can_live_with_same_type == "f" && @has_rabbits == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_dogs == "t"
+        return false if animal.can_live_with_other_type == "f" && @has_cats == "t"
         return true
     end
   end
@@ -122,13 +122,13 @@ class Owner
 
   def family_suitable_for_animal(animal_id)
     animal = Animal.find(animal_id)
-    return false if animal.can_live_with_children == "f" && @has_children_at_home == "true"
+    return false if animal.can_live_with_children == "f" && @has_children_at_home == "t"
     return true
   end
 
   def can_give_correct_attention(animal_id)
     animal = Animal.find(animal_id)
-    return false if animal.needs_special_attention == "t" && @can_give_special_attention == "false"
+    return false if animal.needs_special_attention == "t" && @can_give_special_attention == "f"
     return true
   end
 
