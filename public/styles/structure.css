@@ -104,6 +104,29 @@ p{
   margin-left: 20px;
 }
 
+.owner-profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 50px;
+}
+
+.owner-profile-details{
+  font-size: 1.25rem;
+  background-color: #F5F5F5;
+  width: 80%;
+  justify-content: flex-start;
+  padding-top: 10px;
+
+}
+
+.owner-adoptions{
+  
+  font-size: 1.25rem;
+  background-color: #F5F5F5;
+  width: 100%;
+  justify-content: flex-start;
+}
 
 .profile{
   display: flex;
