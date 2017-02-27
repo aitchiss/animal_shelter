@@ -19,6 +19,12 @@ class AnimalType
     SqlRunner.run(sql)
   end
 
+  def self.find(search_id)
+    sql = "SELECT * FROM animal_types WHERE id = #{search_id};"
+    type_hash = SqlRunner.run(sql).first
+    return AnimalType.new(type_hash)
+  end
+
   def self.all()
     sql = "SELECT * FROM animal_types;"
     animal_type_hashes = SqlRunner.run(sql)
