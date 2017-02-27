@@ -100,11 +100,11 @@ mabel = Animal.new({
   'breed' => "Tabby",
   'adoption_status_id' => not_ready_status.id,
   'photo_file_path' => "https://s-media-cache-ak0.pinimg.com/564x/e5/1f/25/e51f2549f5e539c6cfd8e325a83651b5.jpg",
-  'needs_outside_space' => true,
-  'can_live_with_children' => true,
-  'can_live_with_same_type' => true,
-  'can_live_with_other_type' => false,
-  'needs_special_attention' => true
+  'needs_outside_space' => 'true',
+  'can_live_with_children' => 'true',
+  'can_live_with_same_type' => 'true',
+  'can_live_with_other_type' => 'false',
+  'needs_special_attention' => 'true'
   })
 
 mabel.save

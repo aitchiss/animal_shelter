@@ -85,6 +85,48 @@ class Owner
     SqlRunner.run(sql)
   end
 
+  def has_enough_space(animal_id)
+    animal = Animal.find(animal_id)
+    if animal.needs_outside_space == "t" && @has_outside_space == "false"
+        return false
+    end
+    return true
+  end
+
+
+
+  # def match(animal_id)
+  #   animal = Animal.find(animal_id)
+  #   animal_type = animal.get_type
+
+  #   if animal_type == "cat"
+  #       return false if animal.can_live_with_same_type == "false" && @has_cats == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_dogs == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_rabbits == "true"
+
+  #   elsif animal_type == "dog"
+  #       return false if animal.can_live_with_same_type == "false" && @has_dogs == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_cats == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_rabbits == "true"
+
+  #   elsif animal_type == "rabbit"
+  #       return false if animal.can_live_with_same_type == "false" && @has_rabbits == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_dogs == "true"
+  #       return false if animal.can_live_with_other_type == "false" && @has_cats == "true"
+
+  #   end
+
+  #   if animal.needs_outside_space == "true" && @has_outside_space == "false"
+  #       return false
+  #   end
+
+  #   return false if animal.can_live_with_children == "false" && @has_children_at_home == "true"
+
+  #   return false if animal.needs_special_attention == "true" && @can_give_special_attention == "false"
+
+  #   return true
+  # end  
+
 
   def self.delete_all()
     sql = "DELETE FROM owners;"
