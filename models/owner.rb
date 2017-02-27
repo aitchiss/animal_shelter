@@ -120,27 +120,17 @@ class Owner
   end
 
 
+  def family_suitable_for_animal(animal_id)
+    animal = Animal.find(animal_id)
+    return false if animal.can_live_with_children == "f" && @has_children_at_home == "true"
+    return true
+  end
+
 
   # def match(animal_id)
   #   animal = Animal.find(animal_id)
   #   animal_type = animal.get_type
 
-  #   if animal_type == "cat"
-  #       return false if animal.can_live_with_same_type == "false" && @has_cats == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_dogs == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_rabbits == "true"
-
-  #   elsif animal_type == "dog"
-  #       return false if animal.can_live_with_same_type == "false" && @has_dogs == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_cats == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_rabbits == "true"
-
-  #   elsif animal_type == "rabbit"
-  #       return false if animal.can_live_with_same_type == "false" && @has_rabbits == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_dogs == "true"
-  #       return false if animal.can_live_with_other_type == "false" && @has_cats == "true"
-
-  #   end
 
   #   if animal.needs_outside_space == "true" && @has_outside_space == "false"
   #       return false
