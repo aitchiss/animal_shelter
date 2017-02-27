@@ -9,7 +9,9 @@
   <select id="animal_id" name="animal_id">
     <% @animals.each do |animal| %>
       <% if animal.get_adoption_status == "ready for adoption" %>
-        <option value="<%= animal.id %>" <%= "selected" if @animal.id == animal.id%>><%= animal.name%> the <%= animal.breed%> <%= animal.get_type%></option>
+        <option value="<%= animal.id %>" 
+        <%if @animal%><%= "selected" if @animal.id == animal.id%>><%end%> >
+        <%= animal.name%> the <%= animal.breed%> <%= animal.get_type%></option>
       <%end%>
     <%end%>
   </select>
@@ -20,7 +22,10 @@
   <label for "owner">select owner: </label>
   <select id="owner_id" name="owner_id">
     <% @owners.each do |owner| %>
-      <option value = "<%= owner.id%>" <%= "selected" if @owner.id == owner.id %> ><%= owner.first_name%> <%= owner.last_name%></option>
+      <option value = "<%= owner.id%>" 
+      <% if @owner%><%= "selected" if @owner.id == owner.id %>
+      <%end%> >
+      <%= owner.first_name%> <%= owner.last_name%></option>
     <%end%>
   </select>
 </div>
