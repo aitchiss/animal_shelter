@@ -40,10 +40,11 @@
 
     <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update</a>
   </div>
-
-  <form method="POST" action="/animals/<%=@animal.id%>/delete">
-  <input type="submit" value="delete record">
-  </form>
+  <div class="delete-buttons">
+    <form method="POST" action="/animals/<%=@animal.id%>/delete">
+    <input type="submit" value="delete record">
+    </form>
+  </div>
 
 
 

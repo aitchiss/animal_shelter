@@ -69,7 +69,7 @@
 
 }
 
-form input[type="submit"]{
+.delete-buttons form input[type="submit"]{
   border: none;
   background-color: #009182;
   color: white;
@@ -78,5 +78,15 @@ form input[type="submit"]{
   padding: 10px 20px;
   margin-bottom: 20px;
   
+}
 
+form input[type="submit"]{
+  border: none;
+  background-color: #DB1D73;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  margin: 20px;
+  
 }

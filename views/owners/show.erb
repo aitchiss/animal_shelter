@@ -58,8 +58,10 @@
 
     <a class="profile-btn" href="/owners/<%= @owner.id%>/edit">update</a>
   </div>
-  <form method="POST" action="/owners/<%= @owner.id%>/delete">
-    <input type="submit" value="delete record" />
-  </form>
+  <div class="delete-buttons">
+    <form method="POST" action="/owners/<%= @owner.id%>/delete">
+      <input type="submit" value="delete record" />
+    </form>
+  </div>
   </div>
 </div>
