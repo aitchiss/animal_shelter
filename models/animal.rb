@@ -161,6 +161,15 @@ class Animal
 
   end
 
+  def self.count_need_adoption
+    animals = Animal.all
+    count = 0
+    animals.each do |animal|
+      count += 1 if animal.get_adoption_status == "ready for adoption"
+    end
+    return count
+  end
+
   def self.get_by_type(id)
     sql = "SELECT * FROM animals WHERE type_id = #{id};"
     animals = Animal.get_many(sql)
