@@ -126,17 +126,18 @@ class Owner
     return true
   end
 
+  def can_give_correct_attention(animal_id)
+    animal = Animal.find(animal_id)
+    return false if animal.needs_special_attention == "t" && @can_give_special_attention == "false"
+    return true
+  end
+
 
   # def match(animal_id)
   #   animal = Animal.find(animal_id)
   #   animal_type = animal.get_type
 
 
-  #   if animal.needs_outside_space == "true" && @has_outside_space == "false"
-  #       return false
-  #   end
-
-  #   return false if animal.can_live_with_children == "false" && @has_children_at_home == "true"
 
   #   return false if animal.needs_special_attention == "true" && @can_give_special_attention == "false"
 
