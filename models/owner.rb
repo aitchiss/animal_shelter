@@ -133,16 +133,18 @@ class Owner
   end
 
 
-  # def match(animal_id)
-  #   animal = Animal.find(animal_id)
-  #   animal_type = animal.get_type
+  def match(animal_id)
+    suitabilities = []
 
+    suitabilities << has_enough_space(animal_id)
+    suitabilities << suitable_animals_at_home(animal_id)
+    suitabilities << family_suitable_for_animal(animal_id)
+    suitabilities << can_give_correct_attention(animal_id)
 
+    return false if suitabilities.include?(false)
+    return true
 
-  #   return false if animal.needs_special_attention == "true" && @can_give_special_attention == "false"
-
-  #   return true
-  # end  
+  end  
 
 
   def self.delete_all()
