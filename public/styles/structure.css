@@ -174,3 +174,10 @@ form{
   border: none;
 }
 
+.not-found p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #DB1D73;
+}
+

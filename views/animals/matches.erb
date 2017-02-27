@@ -2,6 +2,12 @@
   <h1>matching owners for <%=@animal.name%></h1>
 </div>
 
+<%if @matched_owners == []%>
+  <div class="not-found">
+  <p>there are currently no matching owners</p>
+  </div> 
+<%end%>
+
 
 <div class="info-list">
 <% @matched_owners.each do |owner| %>
