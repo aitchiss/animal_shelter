@@ -5,17 +5,17 @@
 <form method="POST" action="/animals">
 
 <div class="form-row">
-  <label for "name">name: </label>
+  <label for="name">name: </label>
   <input type="text" name="name" id='name'>
 </div>
 
 <div class="form-row">
-  <label for "admission_date">admission date: </label>
+  <label for="admission_date">admission date: </label>
   <input type="text" name="admission_date" id="admission_date" value="<%= @date%>">
 </div>
 
 <div class="form-row">
-  <label for "animal_type">type: </label>
+  <label for="animal_type">type: </label>
   <select id="animal_type" name="type_id">
     <% @animal_types.each do |type| %>
       <option value="<%=type.id%>"> <%= type.type %></option>
@@ -25,12 +25,12 @@
 </div>
 
 <div class="form-row">
-  <label for "breed">breed: </label>
+  <label for="breed">breed: </label>
   <input type="text" name="breed" id="breed" >
 </div>
 
 <div class="form-row">
-  <label for "adoption_status">adoption status: </label>
+  <label for="adoption_status">adoption status: </label>
   <select id="adoption_status" name="adoption_status_id">
 
     <% @adoption_statuses.each do |status|%>
@@ -81,7 +81,7 @@
 </div>
 
 <div class="form-row">
-  <label for "photo_file_path">photo location: </label>
+  <label for="photo_file_path">photo location: </label>
   <input type="text" name="photo_file_path" id="photo_file_path">
 </div>
 

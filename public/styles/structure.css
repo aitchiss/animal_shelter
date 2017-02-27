@@ -129,7 +129,6 @@ form{
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-  /*margin: 10px 10px 10px 20px;*/
 
 }
 
@@ -185,7 +184,7 @@ form{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 75%;
+  width: 85%;
   font-size: 1.25rem;
 }
 
@@ -194,5 +193,11 @@ form{
   width: 20px;
   height: 20px;
   text-align: center;
+}
+
+
+.staff-update li{
+  margin-bottom: 20px;
+  font-size: 1.25rem;
 }
 

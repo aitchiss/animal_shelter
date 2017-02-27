@@ -1,0 +1,21 @@
+<div class="heading">
+<h1>animals matching "<%= @keyword%>"</h1>
+</div>
+
+<div class="info-list">
+
+  <% @matches.each do |animal|%>
+    <div class="list-entry">
+      <div class="img-container">
+        <img src="<%= animal.photo_file_path%>" />
+      </div>
+      <div class="info-container">
+        <p><strong>Name: </strong><%= animal.name %></p>
+        <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
+      </div>
+        <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
+    </div>
+  <%end%>
+
+</div>

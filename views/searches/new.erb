@@ -1,0 +1,23 @@
+<div class="heading">
+  <h1>search for an animal</h1>
+</div>
+
+<form method="POST" action="/searches">
+
+  <div class="form-row">
+    <label for="animal_type" name="type_id">type:</label>
+    <select id="animal_type" name="type_id">
+      <% @animal_types.each do |type|%>
+        <option value="<%= type.id%>"><%= type.type%></option>
+      <%end%>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label for="breed_keyword" name="breed_keyword">breed:</label>
+    <input type="text" name="breed_keyword" id="breed_keyword">
+  </div>
+
+  <input type="submit" value="search" />
+
+</form>

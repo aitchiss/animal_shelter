@@ -186,6 +186,19 @@ class Animal
     return animals
   end
 
+  def self.search_for_breed(type_id, keyword)
+    all_of_type = Animal.get_by_type(type_id)
+    matches = []
+    all_of_type.each do |animal|
+      if animal.breed.downcase.include?(keyword.downcase)
+        matches << animal
+      end
+    end
+
+    return matches
+
+  end
+
 
 
 
