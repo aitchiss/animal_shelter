@@ -181,3 +181,18 @@ form{
   color: #DB1D73;
 }
 
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 75%;
+  font-size: 1.25rem;
+}
+
+.stats-box{
+  border: 2px solid #616161;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+

@@ -9,8 +9,17 @@
     <div class="heading">
       <h1>live progress</h1>
     </div>
-    <p>adoptions in the last week: <%= @weekly_adoptions%></p>
-    <p>animals currently needing adoption: <%= @animals_needing_adoption%> </p>
-    <p>animals currently in our care: <%=@animals_in_care %></p>
+      <div class="stats">
+        <div class="stats-row">
+          <p>adoptions in the last week: </p>
+          <p>animals currently needing adoption:</p>
+          <p>animals currently in our care:</p>
+        </div>
+      <div class="stats-row">
+        <p class="stats-box"><%= @weekly_adoptions%></p>
+        <p class = "stats-box"><%= @animals_needing_adoption%></p>
+        <p class="stats-box"><%=@animals_in_care %></p>
+      </div>
+    </div>
   </div>
 </div>
