@@ -51,24 +51,32 @@
 
 }
 
-.profile-btn{
+.profile-buttons{
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  margin: auto;
+}
+
+.profile-buttons .profile-btn{
   background-color: #DB1D73;
   color: white;
   text-decoration: none;
   font-size: 0.8rem;
   padding: 10px 20px;
-  margin: 20px 127px;
+  margin-bottom: 10px;
+  text-align: center;
 
 }
 
 form input[type="submit"]{
   border: none;
-  background-color: #DB1D73;
+  background-color: #009182;
   color: white;
   text-decoration: none;
   font-size: 0.8rem;
   padding: 10px 20px;
-  margin: 20px;
+  margin-bottom: 20px;
   
 
 }

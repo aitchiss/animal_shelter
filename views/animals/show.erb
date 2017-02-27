@@ -34,12 +34,20 @@
           <li>would prefer a home without other types of animals</li>
         <%end%>
     </ul>
-   
-  <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update details</a>
+  
+  <div class="profile-buttons">
+    <a class="profile-btn" href="/animals/<%= @animal.id%>/match">view matches</a>
+
+    <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update</a>
+  </div>
 
   <form method="POST" action="/animals/<%=@animal.id%>/delete">
   <input type="submit" value="delete record">
   </form>
+
+
+
+
   </div>
 
 </div>
