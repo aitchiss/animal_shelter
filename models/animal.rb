@@ -122,7 +122,7 @@ class Animal
   end
 
   def process_adoption()
-    adoption_status = AdoptionStatus.find_by_status('Adopted')
+    adoption_status = AdoptionStatus.find_by_status('adopted')
     @adoption_status_id = adoption_status.id
     self.update
   end
