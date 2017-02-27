@@ -93,6 +93,32 @@ class Owner
     return true
   end
 
+  def suitable_animals_at_home(animal_id)
+    animal = Animal.find(animal_id)
+    animal_type = animal.get_type
+
+    case animal_type
+
+    when "cat"
+        return false if animal.can_live_with_same_type == "f" && @has_cats == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_dogs == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "true"
+        return true
+
+    when "dog"
+        return false if animal.can_live_with_same_type == "f" && @has_dogs == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_cats == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "true"
+        return true
+
+    when "rabbit"
+        return false if animal.can_live_with_same_type == "f" && @has_rabbits == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_dogs == "true"
+        return false if animal.can_live_with_other_type == "f" && @has_cats == "true"
+        return true
+    end
+  end
+
 
 
   # def match(animal_id)
