@@ -10,20 +10,19 @@
 <div class="info-list">
 
   <% @matched_animals.each do |animal|%>
-
-    <%if animal.get_adoption_status == "ready for adoption"%>  
-      <div class="list-entry">
-        <div class="img-container">
-          <img src="<%= animal.photo_file_path%>" />
-        </div>
-        <div class="info-container">
-          <p><strong>Name: </strong><%= animal.name %></p>
-          <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
-          <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
-        </div>
-          <a class="view-btn" href="/owners/<%= @owner.id%>/match/<%= animal.id %>">view</a>
+  
+    <div class="list-entry">
+      <div class="img-container">
+        <img src="<%= animal.photo_file_path%>" />
       </div>
-    <%end%>
+      <div class="info-container">
+        <p><strong>Name: </strong><%= animal.name %></p>
+        <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
+      </div>
+        <a class="view-btn" href="/owners/<%= @owner.id%>/match/<%= animal.id %>">view match</a>
+    </div>
+    
   <%end%>
 
 </div>
