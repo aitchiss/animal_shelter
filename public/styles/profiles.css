@@ -1,0 +1,53 @@
+
+.owner-profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 50px;
+}
+
+.owner-profile-details{
+  font-size: 1.25rem;
+  background-color: #F5F5F5;
+  width: 80%;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.owner-adoptions{
+  
+  font-size: 1.25rem;
+  background-color: #F5F5F5;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.owner-adoptions a{
+  text-decoration: none;
+  color: #DB1D73;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-details{
+  font-size: 1.25rem;
+  background-color: #F5F5F5;
+  width: 375px;
+}
+
+.profile-details a{
+  text-decoration: none;
+  color: #DB1D73;
+}
+
+.profile-img-container img{
+  height: 250px;
+  width: 350px;
+  border: solid 12.5px #F5F5F5;
+  margin: 0;
+}
+

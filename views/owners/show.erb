@@ -64,11 +64,14 @@
 
       <%adoption_no = 1 %>
       <% @owner.animals.each do |animal| %>
+        <%if adoption_no > 1%>
+          <hr/>
+        <%end%>
         <p>adoption <%=adoption_no%></p>
         <p><strong>animal name: <a href="/animals/<%=animal.id%>"></strong><%= animal.name%></a></p>
         <p><strong>breed/type: </strong><%= animal.breed%> <%= animal.get_type%></p>
         <p><strong>adopted on:</strong> <%= animal.get_adoption_date%></p>
-        <hr/>
+    
         <%adoption_no += 1%>
       <%end%>
       </div>

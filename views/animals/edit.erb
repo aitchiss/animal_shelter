@@ -7,17 +7,17 @@
 <form method="POST" action="/animals/<%= @animal.id %>">  
 
 <div class="form-row">
-  <label for "name">name: </label>
+  <label for="name">name: </label>
   <input type="text" value = "<%= @animal.name %>" name="name" id='name'>
 </div>
 
 <div class="form-row">
-  <label for "admission_date">admission date: </label>
+  <label for="admission_date">admission date: </label>
   <input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
 </div>
 
 <div class="form-row">
-  <label for "animal_type">type: </label>
+  <label for="animal_type">type: </label>
   <select id="animal_type" name="type_id">
     <% @animal_types.each do |type| %>
       <option value="<%=type.id%>" <%="selected" if @animal.type_id == type.id%> > <%= type.type %></option>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="form-row">
-  <label for "adoption_status">adoption status: </label>
+  <label for="adoption_status">adoption status: </label>
   <select id="adoption_status" name="adoption_status_id">
 
   <% @adoption_statuses.each do |status|%>

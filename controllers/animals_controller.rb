@@ -101,8 +101,3 @@ post '/animals/:id/delete' do
   animal.delete
   redirect to('/animals')
 end
-
-# get '/animals/type/:id' do
-#   # get all animals of type :id
-# end
-

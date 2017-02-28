@@ -1,0 +1,33 @@
+
+
+.img-container img{
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+
+.info-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-entry{
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F5;
+  width: 60%;
+  margin: 10px;
+}
+
+.info-container{
+  width: 500px;
+}
+
+.not-found p{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #DB1D73;
+}
+
