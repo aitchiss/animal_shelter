@@ -1,10 +1,11 @@
 <div class="heading">
-<h1>matching adoptable animals for <%= @owner.first_name%> <%=@owner.last_name%></h1>
+  <h1>matching adoptable animals for <%= @owner.first_name%> <%=@owner.last_name%></h1>
 </div>
 
 <%if @matched_animals == [] %>
   <div class="not-found">
   <p> there are currently no matching animals ready for adoption</p>
+  </div>
 <%end%>
 
 
@@ -14,15 +15,17 @@
   <% @matched_animals.each do |animal|%>
   
     <div class="list-entry">
+
       <div class="img-container">
         <img src="<%= animal.photo_file_path%>" />
       </div>
       <div class="info-container">
-        <p><strong>Name: </strong><%= animal.name %></p>
-        <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
-        <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
+        <p><strong>name: </strong><%= animal.name %></p>
+        <p><strong>admission Date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>adoption Status: </strong><%= animal.get_adoption_status %></p>
       </div>
-        <a class="view-btn" href="/owners/<%= @owner.id%>/match/<%= animal.id %>">view match</a>
+      <a class="view-btn" href="/owners/<%= @owner.id%>/match/<%= animal.id %>">view match</a>
+      
     </div>
     
   <%end%>

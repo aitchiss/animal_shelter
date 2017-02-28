@@ -5,46 +5,47 @@
 
 
 <div class="profile">
+
   <div class="profile-img-container">
     <img src="<%= @animal.photo_file_path%>" />
   </div>
+
   <div class="profile-details">
     <p><strong>admission date:</strong> <%= @animal.admission_date_formatted%></p>
     <p><strong>breed: </strong><%= @animal.breed%></p>
     <p><strong>adoption status: </strong><%= @animal.get_adoption_status%></p>
     <p><strong>needs:</strong></p>
-      <ul>
-        <%if @animal.needs_outside_space == 't' %>
-          <li>a home with outside space</li>
-        <%else%>
-          <li>happy with little or no outside space</li>
-        <%end%>
-        <%if @animal.can_live_with_children == 'f' %>
-          <li><%= @animal.name%>a home without young children</li>
-        <%else%>
-          <li>happy to live with young children</li>
-        <%end%>
-        <%if @animal.can_live_with_same_type == 't' %>
-          <li>happy to live with other <%= @animal.get_type%>s</li>
-        <%else%>
-          <li>does not get along with other <%= @animal.get_type%>s</li>
-        <%end%>
-        <%if @animal.can_live_with_other_type == 't'%>
-          <li>gets along well with other animals</li>
-        <%else%>
-          <li>would prefer a home without other types of animals</li>
-        <%end%>
+
+    <ul>
+      <%if @animal.needs_outside_space == 't' %>
+        <li>a home with outside space</li>
+      <%else%>
+        <li>happy with little or no outside space</li>
+      <%end%>
+
+      <%if @animal.can_live_with_children == 'f' %>
+        <li><%= @animal.name%>a home without young children</li>
+      <%else%>
+        <li>happy to live with young children</li>
+      <%end%>
+
+      <%if @animal.can_live_with_same_type == 't' %>
+        <li>happy to live with other <%= @animal.get_type%>s</li>
+      <%else%>
+        <li>does not get along with other <%= @animal.get_type%>s</li>
+      <%end%>
+
+      <%if @animal.can_live_with_other_type == 't'%>
+        <li>gets along well with other animals</li>
+      <%else%>
+        <li>would prefer a home without other types of animals</li>
+      <%end%>
+
     </ul>
   
-  <div class="profile-buttons">
-    <a class="profile-btn" href="/adoptions/new/<%= @owner.id%>/<%= @animal.id%>">process adoption</a>
+    <div class="profile-buttons">
+      <a class="profile-btn" href="/adoptions/new/<%= @owner.id%>/<%= @animal.id%>">process adoption</a>
 
+    </div>
   </div>
-  
-
-
-
-
-  </div>
-
 </div>

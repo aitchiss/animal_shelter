@@ -3,22 +3,23 @@
 </div>
 
 <div class="filter">
-<a class="filter-highlight-btn" href="/owners/new">add new owner</a>
+  <a class="filter-highlight-btn" href="/owners/new">add new owner</a>
 </div>
 
 <div class="info-list">
-<% @owners.each do |owner| %>
-<div class="list-entry">
-  <div class="img-container">
-    <img src="/images/owner_avatar.png" />
-  </div>
-  <div class="info-container">
-  <p><strong>First Name:</strong> <%= owner.first_name%></p>
-  <p><strong>Last Name:</strong> <%= owner.last_name%></p>
-  <p><strong>Animals adopted:</strong> <%= owner.animals.count%></p>
-  </div>
-  <a class="view-btn" href="/owners/<%= owner.id%>">view</a>
-  </div>
+  <% @owners.each do |owner| %>
 
-<%end%>
+    <div class="list-entry">
+      <div class="img-container">
+        <img src="/images/owner_avatar.png" />
+      </div>
+      <div class="info-container">
+        <p><strong>first Name:</strong> <%= owner.first_name%></p>
+        <p><strong>last Name:</strong> <%= owner.last_name%></p>
+        <p><strong>animals adopted:</strong> <%= owner.animals.count%></p>
+      </div>
+      <a class="view-btn" href="/owners/<%= owner.id%>">view</a>
+    </div>
+
+  <%end%>
 </div>

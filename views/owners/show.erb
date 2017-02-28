@@ -3,6 +3,7 @@
 </div>
 
 <div class="owner-profile">
+
   <div class="owner-profile-details">
     <p><strong>contact details:</strong></p>
     <p><strong>name: </strong><%= @owner.first_name%> <%= @owner.last_name%></p>
@@ -10,6 +11,7 @@
     <p><%= @owner.address%></p>
     <p><strong>phone number:</strong> 0<%= @owner.phone_number%></p>
   </div>
+
   <div class="owner-profile-details">
     <p><strong>home environment:</strong></p>
     <ul>
@@ -18,65 +20,73 @@
       <%else%>
         <li>little or no outside space</li>
       <%end%>
+
       <%if @owner.has_children_at_home == "t"%>
         <li>young children in the home</li>
       <%else%>
         <li>no young children in the home</li>
       <%end%>
+
       <%if @owner.has_cats == "t"%>
         <li>cats already in the home</li>
       <%end%>
+
       <%if @owner.has_dogs == "t"%>
         <li>dogs already in the home</li>
       <%end%>
+
       <%if @owner.has_rabbits == "t"%>
         <li>rabbits already in the home</li>
       <%end%>
+
       <%if @owner.can_give_special_attention == "t"%>
         <li>able to give close attention to animals with needs</li>
       <%end%>
-    </ul>
-    </div>
-    <div class="owner-profile-details">
-      <div class="owner-profile-buttons">
-        <a class="profile-btn" href="/owners/<%= @owner.id%>/match">view matches</a>
 
-        <a class="profile-btn" href="/owners/<%= @owner.id%>/edit">update</a>
-      </div>
-      <div class="delete-buttons">
-        <form method="POST" action="/owners/<%= @owner.id%>/delete">
-          <input type="submit" value="delete record" />
-        </form>
-      </div>
-    </div>
+    </ul>
   </div>
+  <div class="owner-profile-details">
+
+    <div class="owner-profile-buttons">
+      <a class="profile-btn" href="/owners/<%= @owner.id%>/match">view matches</a>
+
+      <a class="profile-btn" href="/owners/<%= @owner.id%>/edit">update</a>
+    </div>
+
+    <div class="delete-buttons">
+      <form method="POST" action="/owners/<%= @owner.id%>/delete">
+        <input type="submit" value="delete record" />
+      </form>
+    </div>
+
+  </div>
+</div>
   
   <div class="heading">
     <h1>previous adoptions</h1>
   </div>
+
   <div class="owner-profile">
     <div class="owner-adoptions">
   
       <%if @owner.animals == []%>
         <p>none</p>
       <%end%>
-      
 
       <%adoption_no = 1 %>
       <% @owner.animals.each do |animal| %>
         <%if adoption_no > 1%>
           <hr/>
         <%end%>
+
         <p>adoption <%=adoption_no%></p>
         <p><strong>animal name: <a href="/animals/<%=animal.id%>"></strong><%= animal.name%></a></p>
         <p><strong>breed/type: </strong><%= animal.breed%> <%= animal.get_type%></p>
         <p><strong>adopted on:</strong> <%= animal.get_adoption_date%></p>
     
         <%adoption_no += 1%>
-      <%end%>
-      </div>
-  </div>
 
-  
+      <%end%>
+    </div>
   </div>
 </div>

@@ -6,22 +6,22 @@
 <form method="POST" action="/owners/<%= @owner.id%>">
 
   <div class="form-row">
-    <label for "first_name">first name: </label>
+    <label for="first_name">first name: </label>
     <input type="text" value="<%= @owner.first_name%>" name="first_name" id="first_name">
   </div>
 
   <div class="form-row">
-    <label for "last_name">last name: </label>
+    <label for="last_name">last name: </label>
     <input type="text" value="<%= @owner.last_name%>" name="last_name" id="last_name">
   </div>
 
   <div class="form-row">
-    <label for "address">address: </label>
+    <label for="address">address: </label>
     <input type="text" value="<%= @owner.address%>" name="address" id="address">
   </div>
 
   <div class="form-row">
-  <label for "phone_number">contact number: </label>
+  <label for="phone_number">contact number: </label>
     <input type="text" value="0<%= @owner.phone_number%>" name="phone_number" id="phone_number">
   </div>
 
@@ -42,7 +42,7 @@
   </div>
 
   <div class="form-row">
-  <label for="has_cats">does the owner currently have any cats?</label>
+    <label for="has_cats">does the owner currently have any cats?</label>
     <select id="has_cats" name="has_cats">
       <option value="true" <%= "selected" if @owner.has_cats == "t"%> >yes</option>
       <option value="false" <%= "selected" if @owner.has_cats == "f"%> >no</option>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="form-row">
-  <label for="has_dogs">does the owner currently have any dogs?</label>
+    <label for="has_dogs">does the owner currently have any dogs?</label>
     <select id="has_dogs" name="has_dogs">
       <option value="true" <%= "selected" if @owner.has_dogs == "t"%> >yes</option>
       <option value="false"<%= "selected" if @owner.has_dogs == "f"%> >no</option>
@@ -58,7 +58,7 @@
   </div>
 
   <div class="form-row">
-  <label for="has_rabbits">does the owner currently have any rabbits?</label>
+    <label for="has_rabbits">does the owner currently have any rabbits?</label>
     <select id="has_rabbits" name="has_rabbits">
       <option value="true" <%= "selected" if @owner.has_rabbits == "t"%> >yes</option>
       <option value="false" <%= "selected" if @owner.has_rabbits == "f"%> >no</option>
@@ -66,7 +66,7 @@
   </div>
 
   <div class="form-row">
-  <label for="can_give_special_attention">is the owner able to stay home and provide close attention to any new pet?</label>
+    <label for="can_give_special_attention">is the owner able to stay home and provide close attention to any new pet?</label>
     <select id="can_give_special_attention" name="can_give_special_attention">
       <option value="true" <%= "selected" if @owner.can_give_special_attention == "t"%> >yes</option>
       <option value="false" <%= "selected" if @owner.can_give_special_attention == "f"%> >no</option>
