@@ -31,17 +31,19 @@
 <div class="info-list">
 
   <% @animals.each do |animal| %>
-    <div class="list-entry">
-      <div class="img-container">
-        <img src="<%= animal.photo_file_path%>" />
+    <%if animal.get_adoption_status != "adopted" %>
+      <div class="list-entry">
+        <div class="img-container">
+          <img src="<%= animal.photo_file_path%>" />
+        </div>
+        <div class="info-container">
+          <p><strong>name: </strong><%= animal.name %></p>
+          <p><strong>admission date:</strong> <%= animal.admission_date_formatted %></p>
+          <p><strong>adoption status: </strong><%= animal.get_adoption_status %></p>
+        </div>
+        <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
       </div>
-      <div class="info-container">
-        <p><strong>name: </strong><%= animal.name %></p>
-        <p><strong>admission Date:</strong> <%= animal.admission_date_formatted %></p>
-        <p><strong>adoption Status: </strong><%= animal.get_adoption_status %></p>
-      </div>
-      <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
-    </div>
+    <%end%>
   <% end %>
 
 </div>
