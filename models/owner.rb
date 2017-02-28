@@ -164,6 +164,8 @@ class Owner
     elsif type == "rabbit"
         @has_rabbits = 'true'
     end
+
+    self.update
   end
 
   def self.delete_all()

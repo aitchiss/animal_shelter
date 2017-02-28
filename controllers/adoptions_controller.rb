@@ -36,10 +36,8 @@ post '/adoptions' do
       'date' => date
       })
     adoption.save
-    animal = Animal.find(animal_id)
-    animal.process_adoption
-    owner.update_animals_at_home(animal.get_type)
-    owner.update
+    adoption.finalise_adoption(animal_id, owner_id)
+  
     redirect to('/owners')
 
   else

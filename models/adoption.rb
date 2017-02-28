@@ -16,6 +16,14 @@ class Adoption
 
   end
 
+  def finalise_adoption(animal_id, owner_id)
+    animal = Animal.find(animal_id)
+    owner = Owner.find(owner_id)
+    animal.process_adoption
+    owner.update_animals_at_home(animal.get_type)
+
+  end
+
   def self.delete_all
     sql = "DELETE FROM adoptions;"
     SqlRunner.run(sql)
@@ -29,5 +37,6 @@ class Adoption
     number_of_adoptions = adoptions_hashes.count
     return number_of_adoptions
   end
+
 
 end
