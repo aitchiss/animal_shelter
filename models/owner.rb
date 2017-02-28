@@ -143,9 +143,18 @@ class Owner
 
     return false if suitabilities.include?(false)
     return true
-
   end  
 
+  def all_adoptable_matches()
+    animals = Animal.all
+    matched_animals = []
+    animals.each do |animal|
+        if self.match(animal.id) == true && animal.get_adoption_status == "ready for adoption"
+            matched_animals << animal
+        end
+    end
+    return matched_animals
+  end
 
   def self.delete_all()
     sql = "DELETE FROM owners;"
