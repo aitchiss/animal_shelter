@@ -125,6 +125,38 @@ hulk_the_cat = Animal.new({
 
 hulk_the_cat.save
 
+agnes = Animal.new({
+  'name' => "Agnes",
+  'admission_date' => "2017/02/28",
+  'type_id' => cat_type.id,
+  'breed' => "Crossbreed",
+  'adoption_status_id' => not_ready_status.id,
+  'photo_file_path' => "https://img.buzzfeed.com/buzzfeed-static/static/2015-06/24/19/campaign_images/webdr09/this-may-be-this-cutest-saddest-cat-ever-2-4626-1435188004-0_dblbig.jpg",
+  'needs_outside_space' => 'false',
+  'can_live_with_children' => 'true',
+  'can_live_with_same_type' => 'true',
+  'can_live_with_other_type' => 'false',
+  'needs_special_attention' => 'true'
+  })
+
+agnes.save
+
+banana = Animal.new({
+  'name' => "Banana",
+  'admission_date' => "2017/02/20",
+  'type_id' => rabbit_type.id,
+  'breed' => "Holland Lop",
+  'adoption_status_id' => ready_status.id,
+  'photo_file_path' => "http://3.bp.blogspot.com/-GAUEsoPVAO4/VmyabA1H3YI/AAAAAAAAA3Q/Dm9ezSbCKn0/s1600/best-pet-rabbit.jpg",
+  'needs_outside_space' => 'false',
+  'can_live_with_children' => 'true',
+  'can_live_with_same_type' => 'true',
+  'can_live_with_other_type' => 'true',
+  'needs_special_attention' => 'false'
+  })
+
+banana.save
+
 
 
 owner1 = Owner.new({

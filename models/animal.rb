@@ -180,6 +180,8 @@ class Animal
 
   end
 
+
+
   def self.count_need_adoption
     animals = Animal.all
     count = 0

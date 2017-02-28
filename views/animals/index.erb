@@ -30,6 +30,7 @@
 
 <div class="info-list">
 
+  <%count = 0%>
   <% @animals.each do |animal| %>
     <%if animal.get_adoption_status != "adopted" %>
       <div class="list-entry">
@@ -42,8 +43,16 @@
           <p><strong>adoption status: </strong><%= animal.get_adoption_status %></p>
         </div>
         <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
-      </div>
+      </div> 
+      <%count+= 1%>
     <%end%>
+    
   <% end %>
+  <%if count == 0%>
+    <div class="not-found">
+      <p>no animals to display</p>
+    </div>
+  <%end%>
+
 
 </div>
