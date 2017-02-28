@@ -156,6 +156,16 @@ class Owner
     return matched_animals
   end
 
+  def update_animals_at_home(type)
+    if type == "dog"
+        @has_dogs = 'true'
+    elsif type == "cat"
+        @has_cats = 'true'
+    elsif type == "rabbit"
+        @has_rabbits = 'true'
+    end
+  end
+
   def self.delete_all()
     sql = "DELETE FROM owners;"
     SqlRunner.run(sql)

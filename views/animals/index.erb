@@ -36,9 +36,9 @@
         <img src="<%= animal.photo_file_path%>" />
       </div>
       <div class="info-container">
-        <p><strong>Name: </strong><%= animal.name %></p>
-        <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
-        <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
+        <p><strong>name: </strong><%= animal.name %></p>
+        <p><strong>admission Date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>adoption Status: </strong><%= animal.get_adoption_status %></p>
       </div>
       <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
     </div>

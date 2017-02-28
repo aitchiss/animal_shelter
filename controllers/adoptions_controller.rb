@@ -38,6 +38,8 @@ post '/adoptions' do
     adoption.save
     animal = Animal.find(animal_id)
     animal.process_adoption
+    owner.update_animals_at_home(animal.get_type)
+    owner.update
     redirect to('/owners')
 
   else
