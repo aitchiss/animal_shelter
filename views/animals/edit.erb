@@ -6,90 +6,90 @@
 
 <form method="POST" action="/animals/<%= @animal.id %>">  
 
-<div class="form-row">
-  <label for="name">name: </label>
-  <input type="text" value = "<%= @animal.name %>" name="name" id='name'>
-</div>
+  <div class="form-row">
+    <label for="name">name: </label>
+    <input type="text" value = "<%= @animal.name %>" name="name" id='name'>
+  </div>
 
-<div class="form-row">
-  <label for="admission_date">admission date: </label>
-  <input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
-</div>
+  <div class="form-row">
+    <label for="admission_date">admission date: </label>
+    <input type="text" value="<%= @animal.admission_date_formatted%>" name="admission_date" id="admission_date" readonly>
+  </div>
 
-<div class="form-row">
-  <label for="animal_type">type: </label>
-  <select id="animal_type" name="type_id">
-    <% @animal_types.each do |type| %>
-      <option value="<%=type.id%>" <%="selected" if @animal.type_id == type.id%> > <%= type.type %></option>
-      <%end%>
+  <div class="form-row">
+    <label for="animal_type">type: </label>
+    <select id="animal_type" name="type_id">
+      <% @animal_types.each do |type| %>
+        <option value="<%=type.id%>" <%="selected" if @animal.type_id == type.id%> > <%= type.type %></option>
+        <%end%>
 
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for "breed">breed: </label>
-  <input type="text" value="<%=@animal.breed%>" name="breed" id="breed" >
-</div>
+  <div class="form-row">
+    <label for "breed">breed: </label>
+    <input type="text" value="<%=@animal.breed%>" name="breed" id="breed" >
+  </div>
 
-<div class="form-row">
-  <label for="adoption_status">adoption status: </label>
-  <select id="adoption_status" name="adoption_status_id">
+  <div class="form-row">
+    <label for="adoption_status">adoption status: </label>
+    <select id="adoption_status" name="adoption_status_id">
 
-  <% @adoption_statuses.each do |status|%>
-  <option value="<%= status.id %>" <%= "selected" if @animal.adoption_status_id === status.id %> ><%= status.status %></option>
+    <% @adoption_statuses.each do |status|%>
+    <option value="<%= status.id %>" <%= "selected" if @animal.adoption_status_id === status.id %> ><%= status.status %></option>
 
-  <%end%>
+    <%end%>
 
-  </select>
-</div>
+    </select>
+  </div>
 
 
-<div class="form-row">
-  <label for="needs_outside_space">needs outside space:</label>
-  <select id="needs_outside_space" name="needs_outside_space">
-    <option value="true" <%= "selected" if @animal.needs_outside_space == "t"%> >yes</option>
-    <option value="false" <%= "selected" if @animal.needs_outside_space == "f"%> >no</option>
-  </select>
-</div>
+  <div class="form-row">
+    <label for="needs_outside_space">needs outside space:</label>
+    <select id="needs_outside_space" name="needs_outside_space">
+      <option value="true" <%= "selected" if @animal.needs_outside_space == "t"%> >yes</option>
+      <option value="false" <%= "selected" if @animal.needs_outside_space == "f"%> >no</option>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for="can_live_with_children">suitable for homes with children:</label>
-  <select id="can_live_with_children" name="can_live_with_children">
-    <option value="true" <%= "selected" if @animal.can_live_with_children == "t"%> >yes</option>
-    <option value="false" <%= "selected" if @animal.can_live_with_children == "f"%> >no</option>
-  </select>
-</div>
+  <div class="form-row">
+    <label for="can_live_with_children">suitable for homes with children:</label>
+    <select id="can_live_with_children" name="can_live_with_children">
+      <option value="true" <%= "selected" if @animal.can_live_with_children == "t"%> >yes</option>
+      <option value="false" <%= "selected" if @animal.can_live_with_children == "f"%> >no</option>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for="can_live_with_same_type">suitable for homes with other animals of same type:</label>
-  <select id="can_live_with_same_type" name="can_live_with_same_type">
-    <option value="true" <%= "selected" if @animal.can_live_with_same_type == "t"%> >yes</option>
-    <option value="false" <%= "selected" if @animal.can_live_with_same_type == "f"%> >no</option>
-  </select>
-</div>
+  <div class="form-row">
+    <label for="can_live_with_same_type">suitable for homes with other animals of same type:</label>
+    <select id="can_live_with_same_type" name="can_live_with_same_type">
+      <option value="true" <%= "selected" if @animal.can_live_with_same_type == "t"%> >yes</option>
+      <option value="false" <%= "selected" if @animal.can_live_with_same_type == "f"%> >no</option>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for="can_live_with_other_type">suitable for homes with other animals of different type:</label>
-  <select id="can_live_with_other_type" name="can_live_with_other_type">
-    <option value="true" <%= "selected" if @animal.can_live_with_other_type == "t"%> >yes</option>
-    <option value="false" <%= "selected" if @animal.can_live_with_other_type == "f"%> >no</option>
-  </select>
-</div>
+  <div class="form-row">
+    <label for="can_live_with_other_type">suitable for homes with other animals of different type:</label>
+    <select id="can_live_with_other_type" name="can_live_with_other_type">
+      <option value="true" <%= "selected" if @animal.can_live_with_other_type == "t"%> >yes</option>
+      <option value="false" <%= "selected" if @animal.can_live_with_other_type == "f"%> >no</option>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for="needs_special_attention">requires special attention:</label>
-  <select id="needs_special_attention" name="needs_special_attention">
-    <option value="true" <%= "selected" if @animal.needs_special_attention == "t"%> >yes</option>
-    <option value="false" <%= "selected" if @animal.needs_special_attention == "f"%> >no</option>
-  </select>
-</div>
+  <div class="form-row">
+    <label for="needs_special_attention">requires special attention:</label>
+    <select id="needs_special_attention" name="needs_special_attention">
+      <option value="true" <%= "selected" if @animal.needs_special_attention == "t"%> >yes</option>
+      <option value="false" <%= "selected" if @animal.needs_special_attention == "f"%> >no</option>
+    </select>
+  </div>
 
-<div class="form-row">
-  <label for "photo_file_path">photo location: </label>
-  <input type="text" name="photo_file_path" id="photo_file_path" value="<%= @animal.photo_file_path%>">
-</div>
+  <div class="form-row">
+    <label for "photo_file_path">photo location: </label>
+    <input type="text" name="photo_file_path" id="photo_file_path" value="<%= @animal.photo_file_path%>">
+  </div>
 
-<input type="submit" value="update" />
+  <input type="submit" value="update" />
 
 
 

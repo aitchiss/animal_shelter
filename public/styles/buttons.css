@@ -48,10 +48,6 @@
   margin: 10px;
 }
 
-.view-btn:hover{
-
-}
-
 .profile-buttons{
   display: flex;
   flex-direction: column;

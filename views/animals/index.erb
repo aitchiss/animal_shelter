@@ -2,9 +2,11 @@
   <h1><%=@header%></h1>
 </div>
 <div class="filter">
+
   <div class="col">
     <a class="filter-btn" href="/searches/new"><img src="/images/search_icon.png" /></a>
   </div>
+
   <div class="col">
   |
   </div>
@@ -14,29 +16,32 @@
   <%@types.each do |type|%>
       <a class="filter-btn" href='/animals/types/<%=type.id%>'><%=type.type%>s</a>
   <%end%>
+
   <div class="col">
   |
   </div>
+
   <a class="filter-highlight-btn" href="/animals/new">admit new animal</a>
+
   <div class="col">
   </div>
+
 </div>
 
 <div class="info-list">
 
-<% @animals.each do |animal| %>
-  <div class="list-entry">
-    <div class="img-container">
-      <img src="<%= animal.photo_file_path%>" />
-    </div>
-    <div class="info-container">
-      <p><strong>Name: </strong><%= animal.name %></p>
-      <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
-      <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
-    </div>
+  <% @animals.each do |animal| %>
+    <div class="list-entry">
+      <div class="img-container">
+        <img src="<%= animal.photo_file_path%>" />
+      </div>
+      <div class="info-container">
+        <p><strong>Name: </strong><%= animal.name %></p>
+        <p><strong>Admission Date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>Adoption Status: </strong><%= animal.get_adoption_status %></p>
+      </div>
       <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
-  </div>
-
-<% end %>
+    </div>
+  <% end %>
 
 </div>
