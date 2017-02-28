@@ -49,7 +49,11 @@
     </ul>
 
     <div class="profile-buttons">
-      <a class="profile-btn" href="/animals/<%= @animal.id%>/match">view matches</a>
+
+      <%if @animal.get_adoption_status != "adopted"%>
+      
+        <a class="profile-btn" href="/animals/<%= @animal.id%>/match">view matches</a>
+      <%end%>
 
       <a class="profile-btn" href="/animals/<%= @animal.id%>/edit">update</a>
     </div>
