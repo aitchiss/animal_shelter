@@ -172,6 +172,21 @@ owner3 = Owner.new({
 
 owner3.save
 
+owner4 = Owner.new({
+  'first_name' => "Sian",
+  'last_name' => "Robinson Davies",
+  'address' => "CodeClan, Castle Terrace, Edinburgh",
+  'phone_number' => "07775235991",
+  'has_outside_space' => 'true',
+  'has_children_at_home' => 'false',
+  'has_cats' => 'false',
+  'has_dogs' => 'false',
+  'has_rabbits' => 'false',
+  'can_give_special_attention' => 'true'
+  })
+
+owner4.save
+
 adoption_flopsy_keith = Adoption.new({
   'owner_id' => owner1.id,
   'animal_id' => mr_flopsy.id,
