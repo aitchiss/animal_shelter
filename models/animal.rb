@@ -134,6 +134,18 @@ class Animal
     self.update
   end
 
+  def owner_matches()
+    owners = Owner.all
+    matched_owners = []
+    owners.each do |owner|
+      if owner.match(@id)
+        matched_owners << owner
+      end
+    end
+
+    return matched_owners
+  end
+
   def delete()
     sql = "DELETE FROM animals WHERE id = #{@id};"
     SqlRunner.run(sql)

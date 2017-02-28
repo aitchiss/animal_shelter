@@ -57,13 +57,8 @@ end
 
 get '/animals/:id/match' do
   @animal = Animal.find(params['id'])
-  owners = Owner.all
-  @matched_owners = []
-  owners.each do |owner|
-    if owner.match(@animal.id) == true
-      @matched_owners << owner 
-    end
-  end
+  @matched_owners = @animal.owner_matches
+  
   erb(:"animals/matches")
 
 end
