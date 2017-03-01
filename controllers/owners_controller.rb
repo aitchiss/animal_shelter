@@ -48,7 +48,12 @@ post '/owners/:id' do
 end
 
 post '/owners/:id/delete' do
-  owner = Owner.find(params['id'].to_i)
-  owner.delete
-  redirect to('/owners')
+  @owner = Owner.find(params['id'].to_i)
+  if @owner.animals == []
+    @owner.delete
+    redirect to('/owners')
+  else
+    @animals = @owner.animals
+    erb(:"owners/error")
+  end
 end
