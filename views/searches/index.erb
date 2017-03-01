@@ -21,3 +21,12 @@
 
   <%end%>
 </div>
+
+<%if @matches == [] %>
+  <div class="not-found">
+    <p>no matches to display</p>
+    <div class="info-list">
+      <a class="view-btn" href="/animals">view all animals</a>
+    </div>
+  </div>
+<%end%>
