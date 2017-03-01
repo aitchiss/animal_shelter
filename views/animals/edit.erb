@@ -18,12 +18,8 @@
 
   <div class="form-row">
     <label for="animal_type">type: </label>
-    <select id="animal_type" name="type_id">
-      <% @animal_types.each do |type| %>
-        <option value="<%=type.id%>" <%="selected" if @animal.type_id == type.id%> > <%= type.type %></option>
-        <%end%>
-
-    </select>
+    <input type="text" value="<%= @animal.get_type%>" readonly>
+    
   </div>
 
   <div class="form-row">
