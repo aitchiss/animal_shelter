@@ -35,6 +35,11 @@ form{
   border: none;
 }
 
+.form-row input[readonly]{
+  background-color: #D8E3E3;
+
+}
+
 .form-row select{
   flex-basis: auto;
   width: 400px;
