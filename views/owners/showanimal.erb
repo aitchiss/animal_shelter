@@ -23,10 +23,10 @@
         <li>happy with little or no outside space</li>
       <%end%>
 
-      <%if @animal.can_live_with_children == 'f' %>
-        <li>a home without young children</li>
-      <%else%>
+      <%if @animal.can_live_with_children %>
         <li>happy to live with young children</li>
+      <%else%>
+        <li>a home without young children</li>
       <%end%>
 
       <%if @animal.can_live_with_same_type%>
