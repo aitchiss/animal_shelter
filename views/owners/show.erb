@@ -15,31 +15,31 @@
   <div class="owner-profile-details">
     <p><strong>home environment:</strong></p>
     <ul>
-      <%if @owner.has_outside_space == "t"%>
+      <%if @owner.has_outside_space %>
         <li>sizeable outside space</li>
       <%else%>
         <li>little or no outside space</li>
       <%end%>
 
-      <%if @owner.has_children_at_home == "t"%>
+      <%if @owner.has_children_at_home %>
         <li>young children in the home</li>
       <%else%>
         <li>no young children in the home</li>
       <%end%>
 
-      <%if @owner.has_cats == "t"%>
+      <%if @owner.has_cats %>
         <li>cats already in the home</li>
       <%end%>
 
-      <%if @owner.has_dogs == "t"%>
+      <%if @owner.has_dogs %>
         <li>dogs already in the home</li>
       <%end%>
 
-      <%if @owner.has_rabbits == "t"%>
+      <%if @owner.has_rabbits %>
         <li>rabbits already in the home</li>
       <%end%>
 
-      <%if @owner.can_give_special_attention == "t"%>
+      <%if @owner.can_give_special_attention %>
         <li>able to give close attention to animals with needs</li>
       <%end%>
 
