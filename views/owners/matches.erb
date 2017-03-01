@@ -21,8 +21,8 @@
       </div>
       <div class="info-container">
         <p><strong>name: </strong><%= animal.name %></p>
-        <p><strong>admission Date:</strong> <%= animal.admission_date_formatted %></p>
-        <p><strong>adoption Status: </strong><%= animal.get_adoption_status %></p>
+        <p><strong>admission date:</strong> <%= animal.admission_date_formatted %></p>
+        <p><strong>adoption status: </strong><%= animal.get_adoption_status %></p>
       </div>
       <a class="view-btn" href="/owners/<%= @owner.id%>/match/<%= animal.id %>">view match</a>
       
