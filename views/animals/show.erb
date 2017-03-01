@@ -23,25 +23,25 @@
     <p><strong>needs:</strong></p>
 
     <ul>
-      <%if @animal.needs_outside_space == 't' %>
+      <%if @animal.needs_outside_space %>
         <li>a home with outside space</li>
       <%else%>
         <li>happy with little or no outside space</li>
       <%end%>
 
-      <%if @animal.can_live_with_children == 'f' %>
-        <li>a home without young children</li>
-      <%else%>
+      <%if @animal.can_live_with_children%>
         <li>happy to live with young children</li>
+      <%else%>
+        <li>a home without young children</li>
       <%end%>
 
-      <%if @animal.can_live_with_same_type == 't' %>
+      <%if @animal.can_live_with_same_type %>
         <li>happy to live with other <%= @animal.get_type%>s</li>
       <%else%>
         <li>does not get along with other <%= @animal.get_type%>s</li>
       <%end%>
 
-      <%if @animal.can_live_with_other_type == 't'%>
+      <%if @animal.can_live_with_other_type %>
         <li>gets along well with other animals</li>
       <%else%>
         <li>would prefer a home without other types of animals</li>
