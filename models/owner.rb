@@ -99,20 +99,26 @@ class Owner
 
     when "cat"
         return false if animal.can_live_with_same_type == "f" && @has_cats == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_dogs == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "t"
+        if animal.can_live_with_other_type == "f" 
+            return false if @has_dogs == "t"
+            return false if @has_rabbits == "t"
+        end
         return true
 
     when "dog"
         return false if animal.can_live_with_same_type == "f" && @has_dogs == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_cats == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_rabbits == "t"
+        if animal.can_live_with_other_type == "f" 
+            return false if @has_cats == "t"
+            return false if @has_rabbits == "t"
+        end
         return true
 
     when "rabbit"
         return false if animal.can_live_with_same_type == "f" && @has_rabbits == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_dogs == "t"
-        return false if animal.can_live_with_other_type == "f" && @has_cats == "t"
+        if animal.can_live_with_other_type == "f" 
+            return false if @has_dogs == "t"
+            return false if @has_cats == "t"
+        end
         return true
     end
   end
