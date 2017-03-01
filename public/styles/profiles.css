@@ -27,6 +27,8 @@
   color: #DB1D73;
 }
 
+
+
 .profile{
   display: flex;
   flex-direction: column;
@@ -43,6 +45,7 @@
   text-decoration: none;
   color: #DB1D73;
 }
+
 
 .profile-img-container img{
   height: 250px;

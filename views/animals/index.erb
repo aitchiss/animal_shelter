@@ -29,7 +29,7 @@
 </div>
 
 <div class="info-list">
-<h3>unadopted animals</h3>
+<h3>unadopted</h3>
   <%count = 0%>
   <% @animals.each do |animal| %>
     <%if animal.get_adoption_status != "adopted" %>
@@ -56,7 +56,7 @@
 
   <%if @header != "animals: all adoptable"%>
 
-    <h3>adopted animals</h3>
+    <h3>adopted</h3>
     <%count = 0 %>
     <% @animals.each do |animal|%>
       <%if animal.get_adoption_status == "adopted"%>

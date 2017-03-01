@@ -23,9 +23,9 @@ end
 
 get '/animals/types/:id' do
   @animals = Animal.get_by_type(params['id'].to_i)
-  type = @animals[0].get_type
+  @type = AnimalType.find(params['id']).type
   @types = AnimalType.all
-  @header = "animals: all #{type}s"
+  @header = "animals: all #{@type}s"
  
   erb(:"animals/index")
   
