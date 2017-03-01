@@ -29,7 +29,7 @@
 </div>
 
 <div class="info-list">
-
+<h3>unadopted animals</h3>
   <%count = 0%>
   <% @animals.each do |animal| %>
     <%if animal.get_adoption_status != "adopted" %>
@@ -52,7 +52,32 @@
     <div class="not-found">
       <p>no animals to display</p>
     </div>
+  <%end%>  
+
+  <h3>adopted animals</h3>
+  <%count = 0 %>
+  <% @animals.each do |animal|%>
+    <%if animal.get_adoption_status == "adopted"%>
+      <div class="list-entry">
+        <div class="img-container">
+          <img src="<%= animal.photo_file_path%>" />
+        </div>
+        <div class="info-container">
+          <p><strong>name: </strong><%= animal.name %></p>
+          <p><strong>admission date:</strong> <%= animal.admission_date_formatted %></p>
+          <p><strong>adoption status: </strong><%= animal.get_adoption_status %></p>
+        </div>
+        <a class="view-btn" href="/animals/<%= animal.id %>">view</a>
+      </div> 
+      <%count+= 1%>
+
+    <%end%>
   <%end%>
 
+  <%if count == 0%>
+    <div class="not-found">
+      <p>no animals to display</p>
+    </div>
+  <%end%> 
 
 </div>
