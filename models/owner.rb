@@ -87,9 +87,7 @@ class Owner
 
   def has_enough_space(animal_id)
     animal = Animal.find(animal_id)
-    if animal.needs_outside_space == "t" && @has_outside_space == "f"
-        return false
-    end
+    return false if animal.needs_outside_space == "t" && @has_outside_space == "f"
     return true
   end
 
