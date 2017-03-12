@@ -49,6 +49,8 @@ Screenshots:
 
 - [Owner Profile](documentation/owner_profile.png)
 
+- [Matches Page](documentation/matches_page.png)
+
 - [New Owner Form](documentation/add_new_owner_form.png)
 
 
