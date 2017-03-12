@@ -1,6 +1,6 @@
 # animal_shelter
 
-This web application was my first project undertaken at CodeClan, after four weeks of learning basic Ruby programming, SQL databases and Sinatra. The project was to be completed within 6 days.
+This web application was my first project undertaken at CodeClan, after four weeks of learning basic Ruby programming, SQL and Sinatra. The project was to be completed within 6 days.
 
 The brief for the project was as follows:
 ```
