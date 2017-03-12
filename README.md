@@ -18,6 +18,10 @@ MVP:
 - List all the owners and their adopted animals
 ```
 
+###Contraints
+
+The finished product was to be completed using only Ruby, Sinatra, PostgreSQL and basic HTML/CSS. Some features (e.g. filtered index list based on animal type/status) may have been easier to develop using other tools, but workarounds were found.
+
 ###My approach
 
 I started this project by constructing a [Use Case Diagram](documentation/animal_shelter_use_case.jpg), clearly defining the system's users and their requirements. This included the uses in the MVP, but also some extensions:
