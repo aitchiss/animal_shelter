@@ -20,13 +20,14 @@ MVP:
 
 ###My approach
 
-I started this project by constructing a Use Case Diagram, clearly defining the system's users and their requirements. This included the uses in the MVP, but also some extensions:
+I started this project by constructing a [Use Case Diagram](documentation/animal_shelter_use_case.jpg), clearly defining the system's users and their requirements. This included the uses in the MVP, but also some extensions:
 - full CRUD actions for owners and animals
 - easily filtered views for adoptable/not adoptable animals
 - search for animals by breed/type
+- live tracking of progress for employees on the homepage
 - view matches between animals and owners, dependent on each animal's individual needs, and the owner's home environment
 
-[Use Case Diagram](documentation/animal_shelter_use_case.jpg)
+
 
 The last point seemed essential for any good animal shelter!
 
@@ -37,3 +38,17 @@ Similarly, prior to styling the application with CSS, wireframes were drawn up t
 ###The final product
 
 The application was fully completed within the 6 day timeframe, and meets all the requirement specifications, as well as the further use cases identified in the planning stage.
+
+The look of the finished application was achieved using a responsive Flexbox design.
+
+Screenshots:
+
+- [Homepage](documentation/home_page.png)
+
+- [Animals Index](documentation/animals_index.png)
+
+- [Owner Profile](documentation/owner_profile.png)
+
+- [New Owner Form](documentation/add_new_owner_form.png)
+
+
