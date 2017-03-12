@@ -1,4 +1,4 @@
-class Owner
+    class Owner
 
   attr_reader :id
 
