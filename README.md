@@ -26,6 +26,8 @@ I started this project by constructing a Use Case Diagram, clearly defining the 
 - search for animals by breed/type
 - view matches between animals and owners, dependent on each animal's individual needs, and the owner's home environment
 
+[Use Case Diagram](documentation/animal_shelter_use_case.jpg)
+
 The last point seemed essential for any good animal shelter!
 
 After constructing the Use Case Diagram, I created a Class Diagram and Entity Relationship Diagram, before starting to code the project.
